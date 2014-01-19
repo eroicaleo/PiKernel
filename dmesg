@@ -1,0 +1,544 @@
+[    0.000000] Booting Linux on physical CPU 0
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Linux version 3.6.11+ (yangge@lc-irv-2762) (gcc version 4.7.1 20120402 (prerelease) (crosstool-NG 1.15.2) ) #2 PREEMPT Wed Jan 8 18:22:05 PST 2014
+[    0.000000] CPU: ARMv6-compatible processor [410fb767] revision 7 (ARMv7), cr=00c5387d
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT nonaliasing instruction cache
+[    0.000000] Machine: BCM2708
+[    0.000000] cma: CMA: reserved 16 MiB at 1b000000
+[    0.000000] Memory policy: ECC disabled, Data cache writeback
+[    0.000000] On node 0 totalpages: 114688
+[    0.000000] free_area_init_node: node 0, pgdat c056a3c4, node_mem_map c0615000
+[    0.000000]   Normal zone: 896 pages used for memmap
+[    0.000000]   Normal zone: 0 pages reserved
+[    0.000000]   Normal zone: 113792 pages, LIFO batch:31
+[    0.000000] pcpu-alloc: s0 r0 d32768 u32768 alloc=1*32768
+[    0.000000] pcpu-alloc: [0] 0 
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 113792
+[    0.000000] Kernel command line: dma.dmachans=0x7f35 bcm2708_fb.fbwidth=656 bcm2708_fb.fbheight=416 bcm2708.boardrev=0xe bcm2708.serial=0xdd9076bd smsc95xx.macaddr=B8:27:EB:90:76:BD sdhci-bcm2708.emmc_clock_freq=100000000 vc_mem.mem_base=0x1ec00000 vc_mem.mem_size=0x20000000  dwc_otg.lpm_enable=0 console=ttyAMA0,115200 kgdboc=ttyAMA0,115200 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline rootwait
+[    0.000000] PID hash table entries: 2048 (order: 1, 8192 bytes)
+[    0.000000] Dentry cache hash table entries: 65536 (order: 6, 262144 bytes)
+[    0.000000] Inode-cache hash table entries: 32768 (order: 5, 131072 bytes)
+[    0.000000] allocated 917504 bytes of page_cgroup
+[    0.000000] please try 'cgroup_disable=memory' option if you don't want memory cgroups
+[    0.000000] Memory: 448MB = 448MB total
+[    0.000000] Memory: 431176k/431176k available, 27576k reserved, 0K highmem
+[    0.000000] Virtual kernel memory layout:
+[    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+[    0.000000]     fixmap  : 0xfff00000 - 0xfffe0000   ( 896 kB)
+[    0.000000]     vmalloc : 0xdc800000 - 0xff000000   ( 552 MB)
+[    0.000000]     lowmem  : 0xc0000000 - 0xdc000000   ( 448 MB)
+[    0.000000]     modules : 0xbf000000 - 0xc0000000   (  16 MB)
+[    0.000000]       .text : 0xc0008000 - 0xc051122c   (5157 kB)
+[    0.000000]       .init : 0xc0512000 - 0xc05351d4   ( 141 kB)
+[    0.000000]       .data : 0xc0536000 - 0xc056adf0   ( 212 kB)
+[    0.000000]        .bss : 0xc056ae14 - 0xc0614ff8   ( 681 kB)
+[    0.000000] SLUB: Genslabs=13, HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] I am in init_cfs_rq, min_vruntime = 18446744073708503040
+[    0.000000] ------------[ cut here ]------------
+[    0.000000] WARNING: at kernel/sched/fair.c:5129 sched_init+0x108/0x270()
+[    0.000000] See the call stack!
+[    0.000000] Modules linked in:
+[    0.000000] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[    0.000000] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[    0.000000] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c051a820>] (sched_init+0x108/0x270)
+[    0.000000] [<c051a820>] (sched_init+0x108/0x270) from [<c0512644>] (start_kernel+0x194/0x344)
+[    0.000000] [<c0512644>] (start_kernel+0x194/0x344) from [<0000803c>] (0x803c)
+[    0.000000] ---[ end trace da227214a82491b7 ]---
+[    0.000000] NR_IRQS:330
+[    0.000000] sched_clock: 32 bits at 1000kHz, resolution 1000ns, wraps every 4294967ms
+[    0.000000] Console: colour dummy device 80x30
+[    0.000000] console [tty1] enabled
+[    0.001316] Calibrating delay loop... 697.95 BogoMIPS (lpj=3489792)
+[    0.060122] pid_max: default: 32768 minimum: 301
+[    0.060614] Mount-cache hash table entries: 512
+[    0.061456] Initializing cgroup subsys cpuacct
+[    0.061513] Initializing cgroup subsys memory
+[    0.061583] Initializing cgroup subsys devices
+[    0.061617] Initializing cgroup subsys freezer
+[    0.061646] Initializing cgroup subsys blkio
+[    0.061795] CPU: Testing write buffer coherency: ok
+[    0.062129] hw perfevents: enabled with v6 PMU driver, 3 counters available
+[    0.062273] Setting up static identity map for 0x3bd380 - 0x3bd3dc
+[    0.063858] devtmpfs: initialized
+[    0.075426] NET: Registered protocol family 16
+[    0.081897] DMA: preallocated 4096 KiB pool for atomic coherent allocations
+[    0.082989] bcm2708.uart_clock = 0
+[    0.084321] hw-breakpoint: found 6 breakpoint and 1 watchpoint registers.
+[    0.084373] hw-breakpoint: maximum watchpoint size is 4 bytes.
+[    0.084407] mailbox: Broadcom VideoCore Mailbox driver
+[    0.084500] bcm2708_vcio: mailbox at f200b880
+[    0.084612] bcm_power: Broadcom power driver
+[    0.084651] bcm_power_open() -> 0
+[    0.084676] bcm_power_request(0, 8)
+[    0.585366] bcm_mailbox_read -> 00000080, 0
+[    0.585405] bcm_power_request -> 0
+[    0.585429] Serial: AMBA PL011 UART driver
+[    0.585560] dev:f1: ttyAMA0 at MMIO 0x20201000 (irq = 83) is a PL011 rev3
+[    1.002960] console [ttyAMA0] enabled
+[    1.026830] bio: create slab <bio-0> at 0
+[    1.031757] SCSI subsystem initialized
+[    1.035835] usbcore: registered new interface driver usbfs
+[    1.041434] usbcore: registered new interface driver hub
+[    1.047040] usbcore: registered new device driver usb
+[    1.053404] Switching to clocksource stc
+[    1.057753] FS-Cache: Loaded
+[    1.060923] CacheFiles: Loaded
+[    1.076030] NET: Registered protocol family 2
+[    1.081307] TCP established hash table entries: 16384 (order: 5, 131072 bytes)
+[    1.089052] TCP bind hash table entries: 16384 (order: 4, 65536 bytes)
+[    1.095842] TCP: Hash tables configured (established 16384 bind 16384)
+[    1.102446] TCP: reno registered
+[    1.105697] UDP hash table entries: 256 (order: 0, 4096 bytes)
+[    1.111593] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+[    1.118289] NET: Registered protocol family 1
+[    1.123190] RPC: Registered named UNIX socket transport module.
+[    1.129246] RPC: Registered udp transport module.
+[    1.133971] RPC: Registered tcp transport module.
+[    1.138714] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    1.146020] bcm2708_dma: DMA manager at f2007000
+[    1.150819] bcm2708_gpio: bcm2708_gpio_probe c0543ef8
+[    1.156291] vc-mem: phys_addr:0x00000000 mem_base=0x1ec00000 mem_size:0x20000000(512 MiB)
+[    1.165507] audit: initializing netlink socket (disabled)
+[    1.171133] type=2000 audit(0.990:1): initialized
+[    1.304743] VFS: Disk quotas dquot_6.5.2
+[    1.309053] Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+[    1.318221] FS-Cache: Netfs 'nfs' registered for caching
+[    1.324816] NFS: Registering the id_resolver key type
+[    1.330091] Key type id_resolver registered
+[    1.334297] Key type id_legacy registered
+[    1.338684] msgmni has been set to 874
+[    1.344538] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 252)
+[    1.352372] io scheduler noop registered
+[    1.356329] io scheduler deadline registered (default)
+[    1.361662] io scheduler cfq registered
+[    1.379151] Console: switching to colour frame buffer device 82x26
+[    1.389265] kgdb: Registered I/O driver kgdboc.
+[    1.395841] vc-cma: Videocore CMA driver
+[    1.401274] vc-cma: vc_cma_base      = 0x00000000
+[    1.407355] vc-cma: vc_cma_size      = 0x00000000 (0 MiB)
+[    1.414103] vc-cma: vc_cma_initial   = 0x00000000 (0 MiB)
+[    1.429664] brd: module loaded
+[    1.439208] loop: module loaded
+[    1.443983] vchiq: vchiq_init_state: slot_zero = 0xdb000000, is_master = 0
+[    1.453171] Loading iSCSI transport class v2.0-870.
+[    1.460518] usbcore: registered new interface driver smsc95xx
+[    1.468002] dwc_otg: version 3.00a 10-AUG-2012 (platform bus)
+[    1.680233] Core Release: 2.80a
+[    1.684663] Setting default values for core params
+[    1.690813] Finished setting default values for core params
+[    1.902773] Using Buffer DMA mode
+[    1.907369] Periodic Transfer Interrupt Enhancement - disabled
+[    1.914469] Multiprocessor Interrupt Enhancement - disabled
+[    1.921325] OTG VER PARAM: 0, OTG VER FLAG: 0
+[    1.926937] Dedicated Tx FIFOs mode
+[    1.932657] dwc_otg: Microframe scheduler enabled
+[    1.933074] dwc_otg bcm2708_usb: DWC OTG Controller
+[    1.939386] dwc_otg bcm2708_usb: new USB bus registered, assigned bus number 1
+[    1.947979] dwc_otg bcm2708_usb: irq 32, io mem 0x00000000
+[    1.954789] Init: Port Power? op_state=1
+[    1.959995] Init: Power Port (0)
+[    1.964568] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002
+[    1.972839] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    1.981477] usb usb1: Product: DWC OTG Controller
+[    1.987584] usb usb1: Manufacturer: Linux 3.6.11+ dwc_otg_hcd
+[    1.994680] usb usb1: SerialNumber: bcm2708_usb
+[    2.001278] hub 1-0:1.0: USB hub found
+[    2.006413] hub 1-0:1.0: 1 port detected
+[    2.011966] dwc_otg: FIQ enabled
+[    2.011982] dwc_otg: NAK holdoff enabled
+[    2.011989] dwc_otg: FIQ split fix enabled
+[    2.012006] Module dwc_common_port init
+[    2.012239] Initializing USB Mass Storage driver...
+[    2.018715] usbcore: registered new interface driver usb-storage
+[    2.026032] USB Mass Storage support registered.
+[    2.032233] mousedev: PS/2 mouse device common for all mice
+[    2.039837] bcm2835-cpufreq: min=700000 max=700000 cur=700000
+[    2.046986] bcm2835-cpufreq: switching to governor powersave
+[    2.053966] bcm2835-cpufreq: switching to governor powersave
+[    2.060898] cpuidle: using governor ladder
+[    2.066202] cpuidle: using governor menu
+[    2.071405] sdhci: Secure Digital Host Controller Interface driver
+[    2.078844] sdhci: Copyright(c) Pierre Ossman
+[    2.084476] sdhci: Enable low-latency mode
+[    2.127706] mmc0: SDHCI controller on BCM2708_Arasan [platform] using platform's DMA
+[    2.138148] mmc0: BCM2708 SDHC host at 0x20300000 DMA 2 IRQ 77
+[    2.147548] sdhci-pltfm: SDHCI platform and OF driver helper
+[    2.160168] usbcore: registered new interface driver usbhid
+[    2.167148] usbhid: USB HID core driver
+[    2.177189] TCP: cubic registered
+[    2.183971] Initializing XFRM netlink socket
+[    2.191743] NET: Registered protocol family 17
+[    2.197791] Key type dns_resolver registered
+[    2.210209] Indeed it is in host mode hprt0 = 00021501
+[    2.207059] VFP support v0.3: implementor 41 architecture 1 part 20 variant b rev 5
+[    2.238432] registered taskstats version 1
+[    2.244546] drivers/rtc/hctosys.c: unable to open rtc device (rtc0)
+[    2.259301] mmc0: new high speed SDHC card at address 0001
+[    2.277749] mmcblk0: mmc0:0001 00000 29.2 GiB 
+[    2.285038]  mmcblk0: p1 p2
+[    2.335695] EXT4-fs (mmcblk0p2): mounted filesystem with ordered data mode. Opts: (null)
+[    2.346855] VFS: Mounted root (ext4 filesystem) on device 179:2.
+[    2.362462] devtmpfs: mounted
+[    2.367417] Freeing init memory: 140K
+[    2.447590] usb 1-1: new high-speed USB device number 2 using dwc_otg
+[    2.456684] Indeed it is in host mode hprt0 = 00001101
+[    2.644393] I am in init_cfs_rq, min_vruntime = 18446744073708503040
+[    2.652769] ------------[ cut here ]------------
+[    2.659045] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[    2.669942] See the call stack!
+[    2.673159] Modules linked in:<6>[    2.678117] usb 1-1: New USB device found, idVendor=0424, idProduct=9512
+[    2.687936] 
+[    2.690983] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[    2.703531] usb 1-1: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+[    2.712395] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[    2.725892] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c0048668>] (alloc_fair_sched_group+0x98/0x144)
+[    2.739494] hub 1-1:1.0: USB hub found
+[    2.745026] [<c0048668>] (alloc_fair_sched_group+0x98/0x144) from [<c004672c>] (sched_create_group+0x38/0x138)
+[    2.758518] hub 1-1:1.0: 3 ports detected
+[    2.764385] [<c004672c>] (sched_create_group+0x38/0x138) from [<c0049638>] (sched_autogroup_create_attach+0x30/0x158)
+[    2.778724] [<c0049638>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[    2.792229] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[    2.804494] ---[ end trace da227214a82491b9 ]---
+[    2.827096] I am in init_cfs_rq, min_vruntime = 18446744073708503040
+[    2.835413] ------------[ cut here ]------------
+[    2.841872] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[    2.853046] See the call stack!
+[    2.856091] Modules linked in:
+[    2.862670] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[    2.875341] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[    2.888296] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c0048668>] (alloc_fair_sched_group+0x98/0x144)
+[    2.901592] [<c0048668>] (alloc_fair_sched_group+0x98/0x144) from [<c004672c>] (sched_create_group+0x38/0x138)
+[    2.915353] [<c004672c>] (sched_create_group+0x38/0x138) from [<c0049638>] (sched_autogroup_create_attach+0x30/0x158)
+[    2.929674] [<c0049638>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[    2.943180] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[    2.955512] ---[ end trace da227214a82491ba ]---
+[    3.127825] usb 1-1.1: new high-speed USB device number 3 using dwc_otg
+[    3.238194] usb 1-1.1: New USB device found, idVendor=0424, idProduct=ec00
+[    3.246984] usb 1-1.1: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+[    3.268272] smsc95xx v1.0.4
+[    3.343150] smsc95xx 1-1.1:1.0: eth0: register 'smsc95xx' at usb-bcm2708_usb-1.1, smsc95xx USB 2.0 Ethernet, b8:27:eb:90:76:bd
+[    3.457738] usb 1-1.3: new high-speed USB device number 4 using dwc_otg
+[    3.586232] usb 1-1.3: New USB device found, idVendor=148f, idProduct=5370
+[    3.604320] usb 1-1.3: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[    3.625882] usb 1-1.3: Product: 802.11 n WLAN
+[    3.635177] usb 1-1.3: Manufacturer: Ralink
+[    3.645129] usb 1-1.3: SerialNumber: 1.0
+[    4.102103] I am in init_cfs_rq, min_vruntime = 18446744073708503040
+[    4.121067] ------------[ cut here ]------------
+[    4.127435] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[    4.155757] See the call stack!
+[    4.160208] Modules linked in:
+[    4.166575] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[    4.196977] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[    4.220565] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c0048668>] (alloc_fair_sched_group+0x98/0x144)
+[    4.247674] [<c0048668>] (alloc_fair_sched_group+0x98/0x144) from [<c004672c>] (sched_create_group+0x38/0x138)
+[    4.274384] [<c004672c>] (sched_create_group+0x38/0x138) from [<c0049638>] (sched_autogroup_create_attach+0x30/0x158)
+[    4.303993] [<c0049638>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[    4.336178] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[    4.365814] ---[ end trace da227214a82491bb ]---
+[    4.373294] udevd[153]: starting version 175
+[    5.453809] led_class: disagrees about version of symbol module_layout
+[    5.702307] crc_ccitt: disagrees about version of symbol module_layout
+[    9.175394] EXT4-fs (mmcblk0p2): re-mounted. Opts: (null)
+[    9.402778] I am in init_cfs_rq, min_vruntime = 18446744073708503040
+[    9.425847] ------------[ cut here ]------------
+[    9.442908] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[    9.474913] See the call stack!
+[    9.488833] Modules linked in:
+[    9.513164] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[    9.533672] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[    9.552881] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c0048668>] (alloc_fair_sched_group+0x98/0x144)
+[    9.612355] [<c0048668>] (alloc_fair_sched_group+0x98/0x144) from [<c004672c>] (sched_create_group+0x38/0x138)
+[    9.636526] [<c004672c>] (sched_create_group+0x38/0x138) from [<c0049638>] (sched_autogroup_create_attach+0x30/0x158)
+[    9.667681] [<c0049638>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[    9.667715] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[    9.667725] ---[ end trace da227214a82491bc ]---
+[    9.742252] EXT4-fs (mmcblk0p2): re-mounted. Opts: (null)
+[   10.392010] snd: disagrees about version of symbol module_layout
+[   17.915418] I am in init_cfs_rq, min_vruntime = 18446744073708503040
+[   17.915442] ------------[ cut here ]------------
+[   17.915485] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   17.915493] See the call stack!
+[   17.915501] Modules linked in:
+[   17.915554] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   17.915582] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   17.915611] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c0048668>] (alloc_fair_sched_group+0x98/0x144)
+[   17.915636] [<c0048668>] (alloc_fair_sched_group+0x98/0x144) from [<c004672c>] (sched_create_group+0x38/0x138)
+[   17.915666] [<c004672c>] (sched_create_group+0x38/0x138) from [<c0049638>] (sched_autogroup_create_attach+0x30/0x158)
+[   17.915709] [<c0049638>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   17.915744] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   17.915756] ---[ end trace da227214a82491bd ]---
+[   18.081193] I am in init_cfs_rq, min_vruntime = 18446744073708503040
+[   18.081218] ------------[ cut here ]------------
+[   18.081260] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   18.081268] See the call stack!
+[   18.081278] Modules linked in:
+[   18.081328] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   18.081357] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   18.081385] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c0048668>] (alloc_fair_sched_group+0x98/0x144)
+[   18.081411] [<c0048668>] (alloc_fair_sched_group+0x98/0x144) from [<c004672c>] (sched_create_group+0x38/0x138)
+[   18.081440] [<c004672c>] (sched_create_group+0x38/0x138) from [<c0049638>] (sched_autogroup_create_attach+0x30/0x158)
+[   18.081483] [<c0049638>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   18.081517] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   18.081530] ---[ end trace da227214a82491be ]---
+[   19.720256] I am in init_cfs_rq, min_vruntime = 18446744073708503040
+[   19.720279] ------------[ cut here ]------------
+[   19.720324] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   19.720332] See the call stack!
+[   19.720341] Modules linked in:
+[   19.720391] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   19.720420] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   19.720448] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c0048668>] (alloc_fair_sched_group+0x98/0x144)
+[   19.720475] [<c0048668>] (alloc_fair_sched_group+0x98/0x144) from [<c004672c>] (sched_create_group+0x38/0x138)
+[   19.720504] [<c004672c>] (sched_create_group+0x38/0x138) from [<c0049638>] (sched_autogroup_create_attach+0x30/0x158)
+[   19.720547] [<c0049638>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   19.720583] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   19.720595] ---[ end trace da227214a82491bf ]---
+[   19.730307] I am in init_cfs_rq, min_vruntime = 18446744073708503040
+[   19.730329] ------------[ cut here ]------------
+[   19.730370] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   19.730378] See the call stack!
+[   19.730388] Modules linked in:
+[   19.730439] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   19.730466] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   19.730493] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c0048668>] (alloc_fair_sched_group+0x98/0x144)
+[   19.730519] [<c0048668>] (alloc_fair_sched_group+0x98/0x144) from [<c004672c>] (sched_create_group+0x38/0x138)
+[   19.730549] [<c004672c>] (sched_create_group+0x38/0x138) from [<c0049638>] (sched_autogroup_create_attach+0x30/0x158)
+[   19.730592] [<c0049638>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   19.730627] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   19.730639] ---[ end trace da227214a82491c0 ]---
+[   20.933865] I am in init_cfs_rq, min_vruntime = 18446744073708503040
+[   20.933910] ------------[ cut here ]------------
+[   20.933954] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   20.933966] See the call stack!
+[   20.933976] Modules linked in:
+[   20.934028] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   20.934056] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   20.947657] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c0048668>] (alloc_fair_sched_group+0x98/0x144)
+[   20.947699] [<c0048668>] (alloc_fair_sched_group+0x98/0x144) from [<c004672c>] (sched_create_group+0x38/0x138)
+[   20.947732] [<c004672c>] (sched_create_group+0x38/0x138) from [<c0049638>] (sched_autogroup_create_attach+0x30/0x158)
+[   20.947774] [<c0049638>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   20.947809] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   20.947823] ---[ end trace da227214a82491c1 ]---
+[   20.987036] I am in init_cfs_rq, min_vruntime = 18446744073708503040
+[   20.987058] ------------[ cut here ]------------
+[   20.987102] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   20.987111] See the call stack!
+[   20.987121] Modules linked in:
+[   20.987172] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   20.987200] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   20.987231] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c0048668>] (alloc_fair_sched_group+0x98/0x144)
+[   20.987258] [<c0048668>] (alloc_fair_sched_group+0x98/0x144) from [<c004672c>] (sched_create_group+0x38/0x138)
+[   20.987287] [<c004672c>] (sched_create_group+0x38/0x138) from [<c0049638>] (sched_autogroup_create_attach+0x30/0x158)
+[   20.987327] [<c0049638>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   20.987364] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   20.987377] ---[ end trace da227214a82491c2 ]---
+[   21.225961] I am in init_cfs_rq, min_vruntime = 18446744073708503040
+[   21.225984] ------------[ cut here ]------------
+[   21.226029] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   21.226037] See the call stack!
+[   21.226046] Modules linked in:
+[   21.226097] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   21.226126] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   21.226156] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c0048668>] (alloc_fair_sched_group+0x98/0x144)
+[   21.226181] [<c0048668>] (alloc_fair_sched_group+0x98/0x144) from [<c004672c>] (sched_create_group+0x38/0x138)
+[   21.226210] [<c004672c>] (sched_create_group+0x38/0x138) from [<c0049638>] (sched_autogroup_create_attach+0x30/0x158)
+[   21.226253] [<c0049638>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   21.226289] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   21.226301] ---[ end trace da227214a82491c3 ]---
+[   21.433739] I am in init_cfs_rq, min_vruntime = 18446744073708503040
+[   21.433761] ------------[ cut here ]------------
+[   21.433806] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   21.433815] See the call stack!
+[   21.433825] Modules linked in:
+[   21.433875] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   21.433905] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   21.433934] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c0048668>] (alloc_fair_sched_group+0x98/0x144)
+[   21.433960] [<c0048668>] (alloc_fair_sched_group+0x98/0x144) from [<c004672c>] (sched_create_group+0x38/0x138)
+[   21.433988] [<c004672c>] (sched_create_group+0x38/0x138) from [<c0049638>] (sched_autogroup_create_attach+0x30/0x158)
+[   21.434032] [<c0049638>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   21.434067] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   21.434078] ---[ end trace da227214a82491c4 ]---
+[   21.937079] I am in init_cfs_rq, min_vruntime = 18446744073708503040
+[   21.937103] ------------[ cut here ]------------
+[   21.937145] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   21.937153] See the call stack!
+[   21.937162] Modules linked in:
+[   21.937213] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   21.937243] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   21.937272] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c0048668>] (alloc_fair_sched_group+0x98/0x144)
+[   21.937298] [<c0048668>] (alloc_fair_sched_group+0x98/0x144) from [<c004672c>] (sched_create_group+0x38/0x138)
+[   21.937327] [<c004672c>] (sched_create_group+0x38/0x138) from [<c0049638>] (sched_autogroup_create_attach+0x30/0x158)
+[   21.937369] [<c0049638>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   21.937404] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   21.937416] ---[ end trace da227214a82491c5 ]---
+[   21.985419] Adding 102396k swap on /var/swap.  Priority:-1 extents:2 across:507900k SS
+[   22.658970] I am in init_cfs_rq, min_vruntime = 18446744073708503040
+[   22.658993] ------------[ cut here ]------------
+[   22.659035] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   22.659043] See the call stack!
+[   22.659052] Modules linked in:
+[   22.659105] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   22.659132] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   22.659161] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c0048668>] (alloc_fair_sched_group+0x98/0x144)
+[   22.659187] [<c0048668>] (alloc_fair_sched_group+0x98/0x144) from [<c004672c>] (sched_create_group+0x38/0x138)
+[   22.659218] [<c004672c>] (sched_create_group+0x38/0x138) from [<c0049638>] (sched_autogroup_create_attach+0x30/0x158)
+[   22.659260] [<c0049638>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   22.659296] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   22.659308] ---[ end trace da227214a82491c6 ]---
+[   22.854704] I am in init_cfs_rq, min_vruntime = 18446744073708503040
+[   22.854730] ------------[ cut here ]------------
+[   22.854774] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   22.854783] See the call stack!
+[   22.854792] Modules linked in:
+[   22.854842] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   22.854876] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   22.854905] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c0048668>] (alloc_fair_sched_group+0x98/0x144)
+[   22.854931] [<c0048668>] (alloc_fair_sched_group+0x98/0x144) from [<c004672c>] (sched_create_group+0x38/0x138)
+[   22.854960] [<c004672c>] (sched_create_group+0x38/0x138) from [<c0049638>] (sched_autogroup_create_attach+0x30/0x158)
+[   22.855003] [<c0049638>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   22.855039] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   22.855051] ---[ end trace da227214a82491c7 ]---
+[   23.737920] I am in init_cfs_rq, min_vruntime = 18446744073708503040
+[   23.737942] ------------[ cut here ]------------
+[   23.737985] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   23.737993] See the call stack!
+[   23.738003] Modules linked in:
+[   23.738053] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   23.738081] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   23.738111] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c0048668>] (alloc_fair_sched_group+0x98/0x144)
+[   23.738137] [<c0048668>] (alloc_fair_sched_group+0x98/0x144) from [<c004672c>] (sched_create_group+0x38/0x138)
+[   23.738166] [<c004672c>] (sched_create_group+0x38/0x138) from [<c0049638>] (sched_autogroup_create_attach+0x30/0x158)
+[   23.738206] [<c0049638>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   23.738243] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   23.738255] ---[ end trace da227214a82491c8 ]---
+[   24.322776] I am in init_cfs_rq, min_vruntime = 18446744073708503040
+[   24.322799] ------------[ cut here ]------------
+[   24.322842] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   24.322851] See the call stack!
+[   24.322860] Modules linked in:
+[   24.322910] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   24.322940] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   24.322968] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c0048668>] (alloc_fair_sched_group+0x98/0x144)
+[   24.322994] [<c0048668>] (alloc_fair_sched_group+0x98/0x144) from [<c004672c>] (sched_create_group+0x38/0x138)
+[   24.323023] [<c004672c>] (sched_create_group+0x38/0x138) from [<c0049638>] (sched_autogroup_create_attach+0x30/0x158)
+[   24.323066] [<c0049638>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   24.323102] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   24.323114] ---[ end trace da227214a82491c9 ]---
+[   24.325988] I am in init_cfs_rq, min_vruntime = 18446744073708503040
+[   24.326011] ------------[ cut here ]------------
+[   24.326054] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   24.326080] See the call stack!
+[   24.326092] Modules linked in:
+[   24.326145] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   24.326176] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   24.326205] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c0048668>] (alloc_fair_sched_group+0x98/0x144)
+[   24.326230] [<c0048668>] (alloc_fair_sched_group+0x98/0x144) from [<c004672c>] (sched_create_group+0x38/0x138)
+[   24.326274] [<c004672c>] (sched_create_group+0x38/0x138) from [<c0049638>] (sched_autogroup_create_attach+0x30/0x158)
+[   24.326321] [<c0049638>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   24.326356] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   24.326368] ---[ end trace da227214a82491ca ]---
+[   24.347818] I am in init_cfs_rq, min_vruntime = 18446744073708503040
+[   24.347840] ------------[ cut here ]------------
+[   24.347879] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   24.347888] See the call stack!
+[   24.347897] Modules linked in:
+[   24.347949] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   24.347978] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   24.348007] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c0048668>] (alloc_fair_sched_group+0x98/0x144)
+[   24.348033] [<c0048668>] (alloc_fair_sched_group+0x98/0x144) from [<c004672c>] (sched_create_group+0x38/0x138)
+[   24.348065] [<c004672c>] (sched_create_group+0x38/0x138) from [<c0049638>] (sched_autogroup_create_attach+0x30/0x158)
+[   24.348107] [<c0049638>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   24.348142] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   24.348155] ---[ end trace da227214a82491cb ]---
+[   24.348496] I am in init_cfs_rq, min_vruntime = 18446744073708503040
+[   24.348511] ------------[ cut here ]------------
+[   24.348539] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   24.348549] See the call stack!
+[   24.348557] Modules linked in:
+[   24.348596] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   24.348622] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   24.348649] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c0048668>] (alloc_fair_sched_group+0x98/0x144)
+[   24.348675] [<c0048668>] (alloc_fair_sched_group+0x98/0x144) from [<c004672c>] (sched_create_group+0x38/0x138)
+[   24.348701] [<c004672c>] (sched_create_group+0x38/0x138) from [<c0049638>] (sched_autogroup_create_attach+0x30/0x158)
+[   24.348734] [<c0049638>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   24.348764] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   24.348776] ---[ end trace da227214a82491cc ]---
+[   24.349159] I am in init_cfs_rq, min_vruntime = 18446744073708503040
+[   24.349176] ------------[ cut here ]------------
+[   24.349205] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   24.349212] See the call stack!
+[   24.349220] Modules linked in:
+[   24.349259] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   24.349285] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   24.349314] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c0048668>] (alloc_fair_sched_group+0x98/0x144)
+[   24.349340] [<c0048668>] (alloc_fair_sched_group+0x98/0x144) from [<c004672c>] (sched_create_group+0x38/0x138)
+[   24.349366] [<c004672c>] (sched_create_group+0x38/0x138) from [<c0049638>] (sched_autogroup_create_attach+0x30/0x158)
+[   24.349398] [<c0049638>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   24.349430] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   24.349442] ---[ end trace da227214a82491cd ]---
+[   24.349820] I am in init_cfs_rq, min_vruntime = 18446744073708503040
+[   24.349835] ------------[ cut here ]------------
+[   24.349864] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   24.349872] See the call stack!
+[   24.349879] Modules linked in:
+[   24.349917] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   24.349946] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   24.349973] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c0048668>] (alloc_fair_sched_group+0x98/0x144)
+[   24.349999] [<c0048668>] (alloc_fair_sched_group+0x98/0x144) from [<c004672c>] (sched_create_group+0x38/0x138)
+[   24.350025] [<c004672c>] (sched_create_group+0x38/0x138) from [<c0049638>] (sched_autogroup_create_attach+0x30/0x158)
+[   24.350059] [<c0049638>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   24.350090] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   24.350101] ---[ end trace da227214a82491ce ]---
+[   24.350482] I am in init_cfs_rq, min_vruntime = 18446744073708503040
+[   24.350497] ------------[ cut here ]------------
+[   24.350526] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   24.350533] See the call stack!
+[   24.350541] Modules linked in:
+[   24.350582] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   24.350608] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   24.350635] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c0048668>] (alloc_fair_sched_group+0x98/0x144)
+[   24.350661] [<c0048668>] (alloc_fair_sched_group+0x98/0x144) from [<c004672c>] (sched_create_group+0x38/0x138)
+[   24.350689] [<c004672c>] (sched_create_group+0x38/0x138) from [<c0049638>] (sched_autogroup_create_attach+0x30/0x158)
+[   24.350722] [<c0049638>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   24.350752] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   24.350764] ---[ end trace da227214a82491cf ]---
+[   25.285747] I am in init_cfs_rq, min_vruntime = 18446744073708503040
+[   25.285770] ------------[ cut here ]------------
+[   25.285814] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   25.285822] See the call stack!
+[   25.285832] Modules linked in:
+[   25.285881] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   25.285909] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   25.285939] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c0048668>] (alloc_fair_sched_group+0x98/0x144)
+[   25.285965] [<c0048668>] (alloc_fair_sched_group+0x98/0x144) from [<c004672c>] (sched_create_group+0x38/0x138)
+[   25.285993] [<c004672c>] (sched_create_group+0x38/0x138) from [<c0049638>] (sched_autogroup_create_attach+0x30/0x158)
+[   25.286033] [<c0049638>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   25.286068] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   25.286081] ---[ end trace da227214a82491d0 ]---
+[   25.961278] I am in init_cfs_rq, min_vruntime = 18446744073708503040
+[   25.961300] ------------[ cut here ]------------
+[   25.961341] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   25.961349] See the call stack!
+[   25.961358] Modules linked in:
+[   25.961427] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   25.961457] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   25.961486] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c0048668>] (alloc_fair_sched_group+0x98/0x144)
+[   25.961512] [<c0048668>] (alloc_fair_sched_group+0x98/0x144) from [<c004672c>] (sched_create_group+0x38/0x138)
+[   25.961544] [<c004672c>] (sched_create_group+0x38/0x138) from [<c0049638>] (sched_autogroup_create_attach+0x30/0x158)
+[   25.961599] [<c0049638>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   25.961636] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   25.961652] ---[ end trace da227214a82491d1 ]---
+[   26.028985] I am in init_cfs_rq, min_vruntime = 18446744073708503040
+[   26.029007] ------------[ cut here ]------------
+[   26.029052] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   26.029061] See the call stack!
+[   26.029070] Modules linked in:
+[   26.029120] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   26.029148] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   26.029180] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c0048668>] (alloc_fair_sched_group+0x98/0x144)
+[   26.029206] [<c0048668>] (alloc_fair_sched_group+0x98/0x144) from [<c004672c>] (sched_create_group+0x38/0x138)
+[   26.029234] [<c004672c>] (sched_create_group+0x38/0x138) from [<c0049638>] (sched_autogroup_create_attach+0x30/0x158)
+[   26.029276] [<c0049638>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   26.029313] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   26.029325] ---[ end trace da227214a82491d2 ]---

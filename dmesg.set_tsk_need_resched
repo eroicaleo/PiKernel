@@ -1,0 +1,817 @@
+[    0.000000] Booting Linux on physical CPU 0
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Linux version 3.6.11+ (yangge@lc-irv-2604) (gcc version 4.7.1 20120402 (prerelease) (crosstool-NG 1.15.2) ) #5 PREEMPT Mon Jan 20 18:18:10 PST 2014
+[    0.000000] CPU: ARMv6-compatible processor [410fb767] revision 7 (ARMv7), cr=00c5387d
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT nonaliasing instruction cache
+[    0.000000] Machine: BCM2708
+[    0.000000] cma: CMA: reserved 16 MiB at 1b000000
+[    0.000000] Memory policy: ECC disabled, Data cache writeback
+[    0.000000] On node 0 totalpages: 114688
+[    0.000000] free_area_init_node: node 0, pgdat c056c3c4, node_mem_map c0617000
+[    0.000000]   Normal zone: 896 pages used for memmap
+[    0.000000]   Normal zone: 0 pages reserved
+[    0.000000]   Normal zone: 113792 pages, LIFO batch:31
+[    0.000000] pcpu-alloc: s0 r0 d32768 u32768 alloc=1*32768
+[    0.000000] pcpu-alloc: [0] 0 
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 113792
+[    0.000000] Kernel command line: dma.dmachans=0x7f35 bcm2708_fb.fbwidth=656 bcm2708_fb.fbheight=416 bcm2708.boardrev=0xe bcm2708.serial=0xdd9076bd smsc95xx.macaddr=B8:27:EB:90:76:BD sdhci-bcm2708.emmc_clock_freq=100000000 vc_mem.mem_base=0x1ec00000 vc_mem.mem_size=0x20000000  dwc_otg.lpm_enable=0 console=ttyAMA0,115200 kgdboc=ttyAMA0,115200 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline rootwait
+[    0.000000] PID hash table entries: 2048 (order: 1, 8192 bytes)
+[    0.000000] Dentry cache hash table entries: 65536 (order: 6, 262144 bytes)
+[    0.000000] Inode-cache hash table entries: 32768 (order: 5, 131072 bytes)
+[    0.000000] allocated 917504 bytes of page_cgroup
+[    0.000000] please try 'cgroup_disable=memory' option if you don't want memory cgroups
+[    0.000000] Memory: 448MB = 448MB total
+[    0.000000] Memory: 431168k/431168k available, 27584k reserved, 0K highmem
+[    0.000000] Virtual kernel memory layout:
+[    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+[    0.000000]     fixmap  : 0xfff00000 - 0xfffe0000   ( 896 kB)
+[    0.000000]     vmalloc : 0xdc800000 - 0xff000000   ( 552 MB)
+[    0.000000]     lowmem  : 0xc0000000 - 0xdc000000   ( 448 MB)
+[    0.000000]     modules : 0xbf000000 - 0xc0000000   (  16 MB)
+[    0.000000]       .text : 0xc0008000 - 0xc0512234   (5161 kB)
+[    0.000000]       .init : 0xc0513000 - 0xc05361d4   ( 141 kB)
+[    0.000000]       .data : 0xc0538000 - 0xc056cdf0   ( 212 kB)
+[    0.000000]        .bss : 0xc056ce14 - 0xc0616ff8   ( 681 kB)
+[    0.000000] SLUB: Genslabs=13, HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] YangGe: I am in init_cfs_rq, min_vruntime = 18446744073708503040, cfs_rq = 0xc0549f10, process = swapper
+[    0.000000] ------------[ cut here ]------------
+[    0.000000] WARNING: at kernel/sched/fair.c:5129 sched_init+0x108/0x270()
+[    0.000000] See the call stack!
+[    0.000000] Modules linked in:
+[    0.000000] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[    0.000000] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[    0.000000] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c051b820>] (sched_init+0x108/0x270)
+[    0.000000] [<c051b820>] (sched_init+0x108/0x270) from [<c0513644>] (start_kernel+0x194/0x344)
+[    0.000000] [<c0513644>] (start_kernel+0x194/0x344) from [<0000803c>] (0x803c)
+[    0.000000] ---[ end trace da227214a82491b7 ]---
+[    0.000000] NR_IRQS:330
+[    0.000000] sched_clock: 32 bits at 1000kHz, resolution 1000ns, wraps every 4294967ms
+[    0.000000] Console: colour dummy device 80x30
+[    0.000000] console [tty1] enabled
+[    0.001363] Calibrating delay loop... 697.95 BogoMIPS (lpj=3489792)
+[    0.060127] pid_max: default: 32768 minimum: 301
+[    0.060613] Mount-cache hash table entries: 512
+[    0.061461] Initializing cgroup subsys cpuacct
+[    0.061521] Initializing cgroup subsys memory
+[    0.061593] Initializing cgroup subsys devices
+[    0.061627] Initializing cgroup subsys freezer
+[    0.061655] Initializing cgroup subsys blkio
+[    0.061805] CPU: Testing write buffer coherency: ok
+[    0.062143] hw perfevents: enabled with v6 PMU driver, 3 counters available
+[    0.062287] Setting up static identity map for 0x3bd420 - 0x3bd47c
+[    0.063874] devtmpfs: initialized
+[    0.075448] NET: Registered protocol family 16
+[    0.081915] DMA: preallocated 4096 KiB pool for atomic coherent allocations
+[    0.083009] bcm2708.uart_clock = 0
+[    0.084348] hw-breakpoint: found 6 breakpoint and 1 watchpoint registers.
+[    0.084404] hw-breakpoint: maximum watchpoint size is 4 bytes.
+[    0.084439] mailbox: Broadcom VideoCore Mailbox driver
+[    0.084532] bcm2708_vcio: mailbox at f200b880
+[    0.084643] bcm_power: Broadcom power driver
+[    0.084682] bcm_power_open() -> 0
+[    0.084708] bcm_power_request(0, 8)
+[    0.585399] bcm_mailbox_read -> 00000080, 0
+[    0.585441] bcm_power_request -> 0
+[    0.585465] Serial: AMBA PL011 UART driver
+[    0.585595] dev:f1: ttyAMA0 at MMIO 0x20201000 (irq = 83) is a PL011 rev3
+[    1.007240] console [ttyAMA0] enabled
+[    1.031401] bio: create slab <bio-0> at 0
+[    1.036327] SCSI subsystem initialized
+[    1.040404] usbcore: registered new interface driver usbfs
+[    1.046005] usbcore: registered new interface driver hub
+[    1.051612] usbcore: registered new device driver usb
+[    1.057988] Switching to clocksource stc
+[    1.062335] FS-Cache: Loaded
+[    1.065499] CacheFiles: Loaded
+[    1.080572] NET: Registered protocol family 2
+[    1.085856] TCP established hash table entries: 16384 (order: 5, 131072 bytes)
+[    1.093601] TCP bind hash table entries: 16384 (order: 4, 65536 bytes)
+[    1.100393] TCP: Hash tables configured (established 16384 bind 16384)
+[    1.106994] TCP: reno registered
+[    1.110246] UDP hash table entries: 256 (order: 0, 4096 bytes)
+[    1.116141] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+[    1.122834] NET: Registered protocol family 1
+[    1.127736] RPC: Registered named UNIX socket transport module.
+[    1.133791] RPC: Registered udp transport module.
+[    1.138514] RPC: Registered tcp transport module.
+[    1.143257] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    1.150561] bcm2708_dma: DMA manager at f2007000
+[    1.155359] bcm2708_gpio: bcm2708_gpio_probe c0545ef8
+[    1.160835] vc-mem: phys_addr:0x00000000 mem_base=0x1ec00000 mem_size:0x20000000(512 MiB)
+[    1.170057] audit: initializing netlink socket (disabled)
+[    1.175686] type=2000 audit(0.990:1): initialized
+[    1.310740] VFS: Disk quotas dquot_6.5.2
+[    1.315054] Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+[    1.324273] FS-Cache: Netfs 'nfs' registered for caching
+[    1.330903] NFS: Registering the id_resolver key type
+[    1.336180] Key type id_resolver registered
+[    1.340385] Key type id_legacy registered
+[    1.344778] msgmni has been set to 874
+[    1.350656] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 252)
+[    1.358494] io scheduler noop registered
+[    1.362560] io scheduler deadline registered (default)
+[    1.367798] io scheduler cfq registered
+[    1.378627] Console: switching to colour frame buffer device 82x26
+[    1.388765] kgdb: Registered I/O driver kgdboc.
+[    1.395384] vc-cma: Videocore CMA driver
+[    1.400709] vc-cma: vc_cma_base      = 0x00000000
+[    1.406868] vc-cma: vc_cma_size      = 0x00000000 (0 MiB)
+[    1.413635] vc-cma: vc_cma_initial   = 0x00000000 (0 MiB)
+[    1.429353] brd: module loaded
+[    1.439004] loop: module loaded
+[    1.443856] vchiq: vchiq_init_state: slot_zero = 0xdb000000, is_master = 0
+[    1.453038] Loading iSCSI transport class v2.0-870.
+[    1.460313] usbcore: registered new interface driver smsc95xx
+[    1.467766] dwc_otg: version 3.00a 10-AUG-2012 (platform bus)
+[    1.680025] Core Release: 2.80a
+[    1.684541] Setting default values for core params
+[    1.690635] Finished setting default values for core params
+[    1.902578] Using Buffer DMA mode
+[    1.907176] Periodic Transfer Interrupt Enhancement - disabled
+[    1.914274] Multiprocessor Interrupt Enhancement - disabled
+[    1.921101] OTG VER PARAM: 0, OTG VER FLAG: 0
+[    1.926732] Dedicated Tx FIFOs mode
+[    1.932508] dwc_otg: Microframe scheduler enabled
+[    1.932929] dwc_otg bcm2708_usb: DWC OTG Controller
+[    1.939176] dwc_otg bcm2708_usb: new USB bus registered, assigned bus number 1
+[    1.947784] dwc_otg bcm2708_usb: irq 32, io mem 0x00000000
+[    1.954641] Init: Port Power? op_state=1
+[    1.959824] Init: Power Port (0)
+[    1.964421] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002
+[    1.972708] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    1.981302] usb usb1: Product: DWC OTG Controller
+[    1.987408] usb usb1: Manufacturer: Linux 3.6.11+ dwc_otg_hcd
+[    1.994545] usb usb1: SerialNumber: bcm2708_usb
+[    2.001138] hub 1-0:1.0: USB hub found
+[    2.006342] hub 1-0:1.0: 1 port detected
+[    2.011851] dwc_otg: FIQ enabled
+[    2.011867] dwc_otg: NAK holdoff enabled
+[    2.011874] dwc_otg: FIQ split fix enabled
+[    2.011891] Module dwc_common_port init
+[    2.012178] Initializing USB Mass Storage driver...
+[    2.018571] usbcore: registered new interface driver usb-storage
+[    2.025971] USB Mass Storage support registered.
+[    2.032217] mousedev: PS/2 mouse device common for all mice
+[    2.039746] bcm2835-cpufreq: min=700000 max=700000 cur=700000
+[    2.046952] bcm2835-cpufreq: switching to governor powersave
+[    2.053923] bcm2835-cpufreq: switching to governor powersave
+[    2.060817] cpuidle: using governor ladder
+[    2.066147] cpuidle: using governor menu
+[    2.071339] sdhci: Secure Digital Host Controller Interface driver
+[    2.078768] sdhci: Copyright(c) Pierre Ossman
+[    2.084433] sdhci: Enable low-latency mode
+[    2.132289] mmc0: SDHCI controller on BCM2708_Arasan [platform] using platform's DMA
+[    2.142750] mmc0: BCM2708 SDHC host at 0x20300000 DMA 2 IRQ 77
+[    2.152136] sdhci-pltfm: SDHCI platform and OF driver helper
+[    2.164748] usbcore: registered new interface driver usbhid
+[    2.171745] usbhid: USB HID core driver
+[    2.181774] TCP: cubic registered
+[    2.188567] Initializing XFRM netlink socket
+[    2.196334] NET: Registered protocol family 17
+[    2.202337] Indeed it is in host mode hprt0 = 00021501
+[    2.212264] Key type dns_resolver registered
+[    2.222502] VFP support v0.3: implementor 41 architecture 1 part 20 variant b rev 5
+[    2.241816] mmc0: new high speed SDHC card at address 0001
+[    2.252789] registered taskstats version 1
+[    2.262724] mmcblk0: mmc0:0001 00000 29.2 GiB 
+[    2.269181] drivers/rtc/hctosys.c: unable to open rtc device (rtc0)
+[    2.283216]  mmcblk0: p1 p2
+[    2.337705] EXT4-fs (mmcblk0p2): mounted filesystem with ordered data mode. Opts: (null)
+[    2.348967] VFS: Mounted root (ext4 filesystem) on device 179:2.
+[    2.364653] devtmpfs: mounted
+[    2.369638] Freeing init memory: 140K
+[    2.462174] usb 1-1: new high-speed USB device number 2 using dwc_otg
+[    2.471083] Indeed it is in host mode hprt0 = 00001101
+[    2.664601] YangGe: I am in init_cfs_rq, min_vruntime = 18446744073708503040, cfs_rq = 0xda996d80, process = init
+[    2.678171] ------------[ cut here ]------------
+[    2.684561] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[    2.698970] usb 1-1: New USB device found, idVendor=0424, idProduct=9512
+[    2.695775] See the call stack!
+[    2.709016] Modules linked in:
+[    2.715474] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[    2.728146] usb 1-1: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+[    2.737899] hub 1-1:1.0: USB hub found
+[    2.743483] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[    2.756470] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c00486a4>] (alloc_fair_sched_group+0x98/0x144)
+[    2.769787] hub 1-1:1.0: 3 ports detected
+[    2.775682] [<c00486a4>] (alloc_fair_sched_group+0x98/0x144) from [<c0046744>] (sched_create_group+0x38/0x138)
+[    2.789203] [<c0046744>] (sched_create_group+0x38/0x138) from [<c0049674>] (sched_autogroup_create_attach+0x30/0x158)
+[    2.803607] [<c0049674>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[    2.817186] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[    2.829397] ---[ end trace da227214a82491b9 ]---
+[    2.852287] YangGe: I am in init_cfs_rq, min_vruntime = 18446744073708503040, cfs_rq = 0xda9ba060, process = init
+[    2.866275] ------------[ cut here ]------------
+[    2.872746] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[    2.884018] See the call stack!
+[    2.887064] Modules linked in:
+[    2.893749] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[    2.906512] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[    2.919560] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c00486a4>] (alloc_fair_sched_group+0x98/0x144)
+[    2.933173] [<c00486a4>] (alloc_fair_sched_group+0x98/0x144) from [<c0046744>] (sched_create_group+0x38/0x138)
+[    2.946855] [<c0046744>] (sched_create_group+0x38/0x138) from [<c0049674>] (sched_autogroup_create_attach+0x30/0x158)
+[    2.961182] [<c0049674>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[    2.975099] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[    2.987340] ---[ end trace da227214a82491ba ]---
+[    3.152387] usb 1-1.1: new high-speed USB device number 3 using dwc_otg
+[    3.262772] usb 1-1.1: New USB device found, idVendor=0424, idProduct=ec00
+[    3.271544] usb 1-1.1: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+[    3.299205] smsc95xx v1.0.4
+[    3.367369] smsc95xx 1-1.1:1.0: eth0: register 'smsc95xx' at usb-bcm2708_usb-1.1, smsc95xx USB 2.0 Ethernet, b8:27:eb:90:76:bd
+[    3.462432] usb 1-1.3: new high-speed USB device number 4 using dwc_otg
+[    3.590932] usb 1-1.3: New USB device found, idVendor=148f, idProduct=5370
+[    3.609651] usb 1-1.3: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[    3.626838] usb 1-1.3: Product: 802.11 n WLAN
+[    3.641593] usb 1-1.3: Manufacturer: Ralink
+[    3.652182] usb 1-1.3: SerialNumber: 1.0
+[    4.137368] YangGe: I am in init_cfs_rq, min_vruntime = 18446744073708503040, cfs_rq = 0xda9ba9c0, process = udevd
+[    4.170846] ------------[ cut here ]------------
+[    4.185781] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[    4.206501] See the call stack!
+[    4.209576] Modules linked in:
+[    4.224024] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[    4.247813] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[    4.270932] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c00486a4>] (alloc_fair_sched_group+0x98/0x144)
+[    4.302371] [<c00486a4>] (alloc_fair_sched_group+0x98/0x144) from [<c0046744>] (sched_create_group+0x38/0x138)
+[    4.331322] [<c0046744>] (sched_create_group+0x38/0x138) from [<c0049674>] (sched_autogroup_create_attach+0x30/0x158)
+[    4.362277] [<c0049674>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[    4.386898] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[    4.412209] ---[ end trace da227214a82491bb ]---
+[    4.419555] udevd[154]: starting version 175
+[    5.554797] Registered led device: led0
+[    6.438206] cfg80211: Calling CRDA to update world regulatory domain
+[    7.462326] usb 1-1.3: reset high-speed USB device number 4 using dwc_otg
+[    7.661811] ieee80211 phy0: Selected rate control algorithm 'minstrel_ht'
+[    7.665037] Registered led device: rt2800usb-phy0::radio
+[    7.665483] Registered led device: rt2800usb-phy0::assoc
+[    7.665948] Registered led device: rt2800usb-phy0::quality
+[    7.667755] usbcore: registered new interface driver rt2800usb
+[   10.252048] EXT4-fs (mmcblk0p2): re-mounted. Opts: (null)
+[   10.480116] YangGe: I am in init_cfs_rq, min_vruntime = 18446744073708503040, cfs_rq = 0xdab67f60, process = logsave
+[   10.520466] ------------[ cut here ]------------
+[   10.538445] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   10.582222] See the call stack!
+[   10.585281] Modules linked in: arc4 rt2800usb rt2800lib crc_ccitt rt2x00usb rt2x00lib mac80211 cfg80211 rfkill leds_gpio led_class
+[   10.656779] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   10.695446] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   10.722277] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c00486a4>] (alloc_fair_sched_group+0x98/0x144)
+[   10.746761] [<c00486a4>] (alloc_fair_sched_group+0x98/0x144) from [<c0046744>] (sched_create_group+0x38/0x138)
+[   10.780870] [<c0046744>] (sched_create_group+0x38/0x138) from [<c0049674>] (sched_autogroup_create_attach+0x30/0x158)
+[   10.808114] [<c0049674>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   10.822098] EXT4-fs (mmcblk0p2): re-mounted. Opts: (null)
+[   10.831712] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   10.845799] ---[ end trace da227214a82491bc ]---
+[   19.260641] YangGe: I am in init_cfs_rq, min_vruntime = 18446744073708503040, cfs_rq = 0xd89c7c00, process = ifplugd
+[   19.260664] ------------[ cut here ]------------
+[   19.260704] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   19.260712] See the call stack!
+[   19.260721] Modules linked in: snd_bcm2835 snd_pcm snd_seq snd_timer snd_seq_device snd snd_page_alloc arc4 rt2800usb rt2800lib crc_ccitt rt2x00usb rt2x00lib mac80211 cfg80211 rfkill leds_gpio led_class
+[   19.260825] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   19.260853] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   19.260881] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c00486a4>] (alloc_fair_sched_group+0x98/0x144)
+[   19.260906] [<c00486a4>] (alloc_fair_sched_group+0x98/0x144) from [<c0046744>] (sched_create_group+0x38/0x138)
+[   19.260935] [<c0046744>] (sched_create_group+0x38/0x138) from [<c0049674>] (sched_autogroup_create_attach+0x30/0x158)
+[   19.260977] [<c0049674>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   19.261012] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   19.261023] ---[ end trace da227214a82491bd ]---
+[   19.399121] YangGe: I am in init_cfs_rq, min_vruntime = 18446744073708503040, cfs_rq = 0xd89c7d20, process = ifplugd
+[   19.399144] ------------[ cut here ]------------
+[   19.399182] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   19.399193] See the call stack!
+[   19.399202] Modules linked in: snd_bcm2835 snd_pcm snd_seq snd_timer snd_seq_device snd snd_page_alloc arc4 rt2800usb rt2800lib crc_ccitt rt2x00usb rt2x00lib mac80211 cfg80211 rfkill leds_gpio led_class
+[   19.399307] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   19.399337] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   19.399366] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c00486a4>] (alloc_fair_sched_group+0x98/0x144)
+[   19.399392] [<c00486a4>] (alloc_fair_sched_group+0x98/0x144) from [<c0046744>] (sched_create_group+0x38/0x138)
+[   19.399421] [<c0046744>] (sched_create_group+0x38/0x138) from [<c0049674>] (sched_autogroup_create_attach+0x30/0x158)
+[   19.399463] [<c0049674>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   19.399498] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   19.399510] ---[ end trace da227214a82491be ]---
+[   19.915944] YangGe: I am in init_cfs_rq, min_vruntime = 18446744073708503040, cfs_rq = 0xd89c7de0, process = ifplugd
+[   19.915966] ------------[ cut here ]------------
+[   19.916006] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   19.916014] See the call stack!
+[   19.916024] Modules linked in: snd_bcm2835 snd_pcm snd_seq snd_timer snd_seq_device snd snd_page_alloc arc4 rt2800usb rt2800lib crc_ccitt rt2x00usb rt2x00lib mac80211 cfg80211 rfkill leds_gpio led_class
+[   19.916129] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   19.916159] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   19.916190] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c00486a4>] (alloc_fair_sched_group+0x98/0x144)
+[   19.916216] [<c00486a4>] (alloc_fair_sched_group+0x98/0x144) from [<c0046744>] (sched_create_group+0x38/0x138)
+[   19.916244] [<c0046744>] (sched_create_group+0x38/0x138) from [<c0049674>] (sched_autogroup_create_attach+0x30/0x158)
+[   19.916288] [<c0049674>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   19.916323] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   19.916336] ---[ end trace da227214a82491bf ]---
+[   21.486067] YangGe: I am in init_cfs_rq, min_vruntime = 18446744073708503040, cfs_rq = 0xd89c7ae0, process = wpa_supplicant
+[   21.486090] ------------[ cut here ]------------
+[   21.486131] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   21.486139] See the call stack!
+[   21.486149] Modules linked in: snd_bcm2835 snd_pcm snd_seq snd_timer snd_seq_device snd snd_page_alloc arc4 rt2800usb rt2800lib crc_ccitt rt2x00usb rt2x00lib mac80211 cfg80211 rfkill leds_gpio led_class
+[   21.486274] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   21.486303] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   21.486332] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c00486a4>] (alloc_fair_sched_group+0x98/0x144)
+[   21.486376] [<c00486a4>] (alloc_fair_sched_group+0x98/0x144) from [<c0046744>] (sched_create_group+0x38/0x138)
+[   21.486408] [<c0046744>] (sched_create_group+0x38/0x138) from [<c0049674>] (sched_autogroup_create_attach+0x30/0x158)
+[   21.486450] [<c0049674>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   21.486487] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   21.486500] ---[ end trace da227214a82491c0 ]---
+[   22.739612] YangGe: I am in init_cfs_rq, min_vruntime = 18446744073708503040, cfs_rq = 0xd956a240, process = init
+[   22.739635] ------------[ cut here ]------------
+[   22.739677] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   22.739685] See the call stack!
+[   22.739694] Modules linked in: snd_bcm2835 snd_pcm snd_seq snd_timer snd_seq_device snd snd_page_alloc arc4 rt2800usb rt2800lib crc_ccitt rt2x00usb rt2x00lib mac80211 cfg80211 rfkill leds_gpio led_class
+[   22.739800] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   22.739828] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   22.739857] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c00486a4>] (alloc_fair_sched_group+0x98/0x144)
+[   22.739883] [<c00486a4>] (alloc_fair_sched_group+0x98/0x144) from [<c0046744>] (sched_create_group+0x38/0x138)
+[   22.739914] [<c0046744>] (sched_create_group+0x38/0x138) from [<c0049674>] (sched_autogroup_create_attach+0x30/0x158)
+[   22.739955] [<c0049674>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   22.739990] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   22.740002] ---[ end trace da227214a82491c1 ]---
+[   22.753094] YangGe: I am in init_cfs_rq, min_vruntime = 18446744073708503040, cfs_rq = 0xd956a240, process = init
+[   22.753116] ------------[ cut here ]------------
+[   22.753158] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   22.753166] See the call stack!
+[   22.753175] Modules linked in: snd_bcm2835 snd_pcm snd_seq snd_timer snd_seq_device snd snd_page_alloc arc4 rt2800usb rt2800lib crc_ccitt rt2x00usb rt2x00lib mac80211 cfg80211 rfkill leds_gpio led_class
+[   22.753281] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   22.762243] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   22.762302] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c00486a4>] (alloc_fair_sched_group+0x98/0x144)
+[   22.762331] [<c00486a4>] (alloc_fair_sched_group+0x98/0x144) from [<c0046744>] (sched_create_group+0x38/0x138)
+[   22.762360] [<c0046744>] (sched_create_group+0x38/0x138) from [<c0049674>] (sched_autogroup_create_attach+0x30/0x158)
+[   22.762403] [<c0049674>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   22.762438] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   22.762452] ---[ end trace da227214a82491c2 ]---
+[   22.985980] YangGe: I am in init_cfs_rq, min_vruntime = 18446744073708503040, cfs_rq = 0xd956a480, process = wpa_cli
+[   22.986003] ------------[ cut here ]------------
+[   22.986041] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   22.986051] See the call stack!
+[   22.986062] Modules linked in: snd_bcm2835 snd_pcm snd_seq snd_timer snd_seq_device snd snd_page_alloc arc4 rt2800usb rt2800lib crc_ccitt rt2x00usb rt2x00lib mac80211 cfg80211 rfkill leds_gpio led_class
+[   22.986166] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   22.986197] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   22.986226] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c00486a4>] (alloc_fair_sched_group+0x98/0x144)
+[   22.986250] [<c00486a4>] (alloc_fair_sched_group+0x98/0x144) from [<c0046744>] (sched_create_group+0x38/0x138)
+[   22.986278] [<c0046744>] (sched_create_group+0x38/0x138) from [<c0049674>] (sched_autogroup_create_attach+0x30/0x158)
+[   22.986322] [<c0049674>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   22.986356] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   22.986368] ---[ end trace da227214a82491c3 ]---
+[   24.425700] wlan0: authenticate with ec:1a:59:88:95:36
+[   24.477120] YangGe: I am in init_cfs_rq, min_vruntime = 18446744073708503040, cfs_rq = 0xd956a6c0, process = thd
+[   24.477173] ------------[ cut here ]------------
+[   24.477244] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   24.477279] See the call stack!
+[   24.477293] Modules linked in: snd_bcm2835 snd_pcm snd_seq snd_timer snd_seq_device snd snd_page_alloc arc4 rt2800usb rt2800lib crc_ccitt rt2x00usb rt2x00lib mac80211 cfg80211 rfkill leds_gpio led_class
+[   24.480019] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   24.480119] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   24.480193] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c00486a4>] (alloc_fair_sched_group+0x98/0x144)
+[   24.483469] wlan0: send auth to ec:1a:59:88:95:36 (try 1/3)
+[   24.487678] [<c00486a4>] (alloc_fair_sched_group+0x98/0x144) from [<c0046744>] (sched_create_group+0x38/0x138)
+[   24.487725] [<c0046744>] (sched_create_group+0x38/0x138) from [<c0049674>] (sched_autogroup_create_attach+0x30/0x158)
+[   24.487772] [<c0049674>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   24.487808] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   24.487823] ---[ end trace da227214a82491c4 ]---
+[   24.492725] wlan0: authenticated
+[   24.532195] wlan0: associate with ec:1a:59:88:95:36 (try 1/3)
+[   24.551751] wlan0: RX AssocResp from ec:1a:59:88:95:36 (capab=0x411 status=0 aid=7)
+[   24.566974] wlan0: associated
+[   24.607255] YangGe: I am in init_cfs_rq, min_vruntime = 18446744073708503040, cfs_rq = 0xd956a060, process = startpar
+[   24.607281] ------------[ cut here ]------------
+[   24.607321] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   24.607330] See the call stack!
+[   24.607339] Modules linked in: snd_bcm2835 snd_pcm snd_seq snd_timer snd_seq_device snd snd_page_alloc arc4 rt2800usb rt2800lib crc_ccitt rt2x00usb rt2x00lib mac80211 cfg80211 rfkill leds_gpio led_class
+[   24.607447] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   24.607476] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   24.607505] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c00486a4>] (alloc_fair_sched_group+0x98/0x144)
+[   24.607533] [<c00486a4>] (alloc_fair_sched_group+0x98/0x144) from [<c0046744>] (sched_create_group+0x38/0x138)
+[   24.607562] [<c0046744>] (sched_create_group+0x38/0x138) from [<c0049674>] (sched_autogroup_create_attach+0x30/0x158)
+[   24.607602] [<c0049674>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   24.607636] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   24.607650] ---[ end trace da227214a82491c5 ]---
+[   25.345366] YangGe: I am in init_cfs_rq, min_vruntime = 18446744073708503040, cfs_rq = 0xd956a720, process = cron
+[   25.345391] ------------[ cut here ]------------
+[   25.345430] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   25.345439] See the call stack!
+[   25.345448] Modules linked in: snd_bcm2835 snd_pcm snd_seq snd_timer snd_seq_device snd snd_page_alloc arc4 rt2800usb rt2800lib crc_ccitt rt2x00usb rt2x00lib mac80211 cfg80211 rfkill leds_gpio led_class
+[   25.345555] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   25.345584] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   25.345613] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c00486a4>] (alloc_fair_sched_group+0x98/0x144)
+[   25.345641] [<c00486a4>] (alloc_fair_sched_group+0x98/0x144) from [<c0046744>] (sched_create_group+0x38/0x138)
+[   25.345670] [<c0046744>] (sched_create_group+0x38/0x138) from [<c0049674>] (sched_autogroup_create_attach+0x30/0x158)
+[   25.345712] [<c0049674>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   25.345747] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   25.345760] ---[ end trace da227214a82491c6 ]---
+[   25.508737] YangGe: I am in init_cfs_rq, min_vruntime = 18446744073708503040, cfs_rq = 0xdaa36d80, process = dbus-daemon
+[   25.508760] ------------[ cut here ]------------
+[   25.508802] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   25.508810] See the call stack!
+[   25.508819] Modules linked in: snd_bcm2835 snd_pcm snd_seq snd_timer snd_seq_device snd snd_page_alloc arc4 rt2800usb rt2800lib crc_ccitt rt2x00usb rt2x00lib mac80211 cfg80211 rfkill leds_gpio led_class
+[   25.508927] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   25.508956] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   25.508986] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c00486a4>] (alloc_fair_sched_group+0x98/0x144)
+[   25.509011] [<c00486a4>] (alloc_fair_sched_group+0x98/0x144) from [<c0046744>] (sched_create_group+0x38/0x138)
+[   25.509042] [<c0046744>] (sched_create_group+0x38/0x138) from [<c0049674>] (sched_autogroup_create_attach+0x30/0x158)
+[   25.509083] [<c0049674>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   25.509117] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   25.509129] ---[ end trace da227214a82491c7 ]---
+[   25.643384] Adding 102396k swap on /var/swap.  Priority:-1 extents:2 across:507900k SS
+[   26.022677] YangGe: I am in init_cfs_rq, min_vruntime = 18446744073708503040, cfs_rq = 0xdaa36b40, process = start-stop-daem
+[   26.022700] ------------[ cut here ]------------
+[   26.022741] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   26.022750] See the call stack!
+[   26.022759] Modules linked in: snd_bcm2835 snd_pcm snd_seq snd_timer snd_seq_device snd snd_page_alloc arc4 rt2800usb rt2800lib crc_ccitt rt2x00usb rt2x00lib mac80211 cfg80211 rfkill leds_gpio led_class
+[   26.022864] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   26.022893] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   26.022922] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c00486a4>] (alloc_fair_sched_group+0x98/0x144)
+[   26.022948] [<c00486a4>] (alloc_fair_sched_group+0x98/0x144) from [<c0046744>] (sched_create_group+0x38/0x138)
+[   26.022978] [<c0046744>] (sched_create_group+0x38/0x138) from [<c0049674>] (sched_autogroup_create_attach+0x30/0x158)
+[   26.023019] [<c0049674>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   26.023053] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   26.023066] ---[ end trace da227214a82491c8 ]---
+[   26.657924] YangGe: I am in init_cfs_rq, min_vruntime = 18446744073708503040, cfs_rq = 0xdaa36960, process = ntpd
+[   26.657947] ------------[ cut here ]------------
+[   26.657986] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   26.657994] See the call stack!
+[   26.658003] Modules linked in: snd_bcm2835 snd_pcm snd_seq snd_timer snd_seq_device snd snd_page_alloc arc4 rt2800usb rt2800lib crc_ccitt rt2x00usb rt2x00lib mac80211 cfg80211 rfkill leds_gpio led_class
+[   26.658110] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   26.658138] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   26.658166] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c00486a4>] (alloc_fair_sched_group+0x98/0x144)
+[   26.658194] [<c00486a4>] (alloc_fair_sched_group+0x98/0x144) from [<c0046744>] (sched_create_group+0x38/0x138)
+[   26.658223] [<c0046744>] (sched_create_group+0x38/0x138) from [<c0049674>] (sched_autogroup_create_attach+0x30/0x158)
+[   26.658263] [<c0049674>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   26.658298] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   26.658311] ---[ end trace da227214a82491c9 ]---
+[   26.904088] YangGe: I am in init_cfs_rq, min_vruntime = 18446744073708503040, cfs_rq = 0xdaa36780, process = Xorg
+[   26.904113] ------------[ cut here ]------------
+[   26.904151] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   26.904160] See the call stack!
+[   26.904170] Modules linked in: snd_bcm2835 snd_pcm snd_seq snd_timer snd_seq_device snd snd_page_alloc arc4 rt2800usb rt2800lib crc_ccitt rt2x00usb rt2x00lib mac80211 cfg80211 rfkill leds_gpio led_class
+[   26.904275] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   26.904304] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   26.904335] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c00486a4>] (alloc_fair_sched_group+0x98/0x144)
+[   26.904361] [<c00486a4>] (alloc_fair_sched_group+0x98/0x144) from [<c0046744>] (sched_create_group+0x38/0x138)
+[   26.904389] [<c0046744>] (sched_create_group+0x38/0x138) from [<c0049674>] (sched_autogroup_create_attach+0x30/0x158)
+[   26.904430] [<c0049674>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   26.904466] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   26.904478] ---[ end trace da227214a82491ca ]---
+[   27.725022] YangGe: I am in init_cfs_rq, min_vruntime = 18446744073708503040, cfs_rq = 0xdaa36660, process = sshd
+[   27.725046] ------------[ cut here ]------------
+[   27.725088] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   27.725096] See the call stack!
+[   27.725105] Modules linked in: snd_bcm2835 snd_pcm snd_seq snd_timer snd_seq_device snd snd_page_alloc arc4 rt2800usb rt2800lib crc_ccitt rt2x00usb rt2x00lib mac80211 cfg80211 rfkill leds_gpio led_class
+[   27.725212] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   27.725240] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   27.725268] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c00486a4>] (alloc_fair_sched_group+0x98/0x144)
+[   27.725295] [<c00486a4>] (alloc_fair_sched_group+0x98/0x144) from [<c0046744>] (sched_create_group+0x38/0x138)
+[   27.725325] [<c0046744>] (sched_create_group+0x38/0x138) from [<c0049674>] (sched_autogroup_create_attach+0x30/0x158)
+[   27.725367] [<c0049674>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   27.725402] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   27.725414] ---[ end trace da227214a82491cb ]---
+[   28.370831] YangGe: I am in init_cfs_rq, min_vruntime = 18446744073708503040, cfs_rq = 0xdaa36ae0, process = init
+[   28.370853] ------------[ cut here ]------------
+[   28.370892] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   28.370900] See the call stack!
+[   28.370911] Modules linked in: snd_bcm2835 snd_pcm snd_seq snd_timer snd_seq_device snd snd_page_alloc arc4 rt2800usb rt2800lib crc_ccitt rt2x00usb rt2x00lib mac80211 cfg80211 rfkill leds_gpio led_class
+[   28.371016] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   28.371046] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   28.371074] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c00486a4>] (alloc_fair_sched_group+0x98/0x144)
+[   28.371099] [<c00486a4>] (alloc_fair_sched_group+0x98/0x144) from [<c0046744>] (sched_create_group+0x38/0x138)
+[   28.371127] [<c0046744>] (sched_create_group+0x38/0x138) from [<c0049674>] (sched_autogroup_create_attach+0x30/0x158)
+[   28.371169] [<c0049674>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   28.371204] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   28.371216] ---[ end trace da227214a82491cc ]---
+[   28.377467] YangGe: I am in init_cfs_rq, min_vruntime = 18446744073708503040, cfs_rq = 0xdaa364e0, process = init
+[   28.377509] ------------[ cut here ]------------
+[   28.377553] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   28.377563] See the call stack!
+[   28.377573] Modules linked in: snd_bcm2835 snd_pcm snd_seq snd_timer snd_seq_device snd snd_page_alloc arc4 rt2800usb rt2800lib crc_ccitt rt2x00usb rt2x00lib mac80211 cfg80211 rfkill leds_gpio led_class
+[   28.377681] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   28.377726] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   28.377759] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c00486a4>] (alloc_fair_sched_group+0x98/0x144)
+[   28.377788] [<c00486a4>] (alloc_fair_sched_group+0x98/0x144) from [<c0046744>] (sched_create_group+0x38/0x138)
+[   28.377817] [<c0046744>] (sched_create_group+0x38/0x138) from [<c0049674>] (sched_autogroup_create_attach+0x30/0x158)
+[   28.377858] [<c0049674>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   28.384361] YangGe: I am in init_cfs_rq, min_vruntime = 18446744073708503040, cfs_rq = 0xdaa36540, process = init
+[   28.384383] ------------[ cut here ]------------
+[   28.384424] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   28.384433] See the call stack!
+[   28.384442] Modules linked in: snd_bcm2835 snd_pcm snd_seq snd_timer snd_seq_device snd snd_page_alloc arc4 rt2800usb rt2800lib crc_ccitt rt2x00usb rt2x00lib mac80211 cfg80211 rfkill leds_gpio led_class
+[   28.384548] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   28.384577] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   28.384606] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c00486a4>] (alloc_fair_sched_group+0x98/0x144)
+[   28.384632] [<c00486a4>] (alloc_fair_sched_group+0x98/0x144) from [<c0046744>] (sched_create_group+0x38/0x138)
+[   28.384662] [<c0046744>] (sched_create_group+0x38/0x138) from [<c0049674>] (sched_autogroup_create_attach+0x30/0x158)
+[   28.384703] [<c0049674>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   28.384737] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   28.384749] ---[ end trace da227214a82491cd ]---
+[   28.396943] YangGe: I am in init_cfs_rq, min_vruntime = 18446744073708503040, cfs_rq = 0xdaa36480, process = init
+[   28.396965] ------------[ cut here ]------------
+[   28.397004] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   28.397012] See the call stack!
+[   28.397021] Modules linked in: snd_bcm2835 snd_pcm snd_seq snd_timer snd_seq_device snd snd_page_alloc arc4 rt2800usb rt2800lib crc_ccitt rt2x00usb rt2x00lib mac80211 cfg80211 rfkill leds_gpio led_class
+[   28.397127] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   28.397155] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   28.397185] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c00486a4>] (alloc_fair_sched_group+0x98/0x144)
+[   28.397212] [<c00486a4>] (alloc_fair_sched_group+0x98/0x144) from [<c0046744>] (sched_create_group+0x38/0x138)
+[   28.397240] [<c0046744>] (sched_create_group+0x38/0x138) from [<c0049674>] (sched_autogroup_create_attach+0x30/0x158)
+[   28.397280] [<c0049674>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   28.397317] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   28.397329] ---[ end trace da227214a82491ce ]---
+[   28.402481] YangGe: I am in init_cfs_rq, min_vruntime = 18446744073708503040, cfs_rq = 0xdaa362a0, process = init
+[   28.402503] ------------[ cut here ]------------
+[   28.402543] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   28.402551] See the call stack!
+[   28.402560] Modules linked in: snd_bcm2835 snd_pcm snd_seq snd_timer snd_seq_device snd snd_page_alloc arc4 rt2800usb rt2800lib crc_ccitt rt2x00usb rt2x00lib mac80211 cfg80211 rfkill leds_gpio led_class
+[   28.402664] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   28.402692] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   28.402720] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c00486a4>] (alloc_fair_sched_group+0x98/0x144)
+[   28.402746] [<c00486a4>] (alloc_fair_sched_group+0x98/0x144) from [<c0046744>] (sched_create_group+0x38/0x138)
+[   28.402774] [<c0046744>] (sched_create_group+0x38/0x138) from [<c0049674>] (sched_autogroup_create_attach+0x30/0x158)
+[   28.402817] [<c0049674>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   28.402853] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   28.402864] ---[ end trace da227214a82491cf ]---
+[   28.412441] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   28.412471] ---[ end trace da227214a82491d0 ]---
+[   28.429047] YangGe: I am in init_cfs_rq, min_vruntime = 18446744073708503040, cfs_rq = 0xdaa36300, process = init
+[   28.429069] ------------[ cut here ]------------
+[   28.429108] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   28.429116] See the call stack!
+[   28.429125] Modules linked in: snd_bcm2835 snd_pcm snd_seq snd_timer snd_seq_device snd snd_page_alloc arc4 rt2800usb rt2800lib crc_ccitt rt2x00usb rt2x00lib mac80211 cfg80211 rfkill leds_gpio led_class
+[   28.429232] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   28.429259] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   28.429292] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c00486a4>] (alloc_fair_sched_group+0x98/0x144)
+[   28.429318] [<c00486a4>] (alloc_fair_sched_group+0x98/0x144) from [<c0046744>] (sched_create_group+0x38/0x138)
+[   28.429346] [<c0046744>] (sched_create_group+0x38/0x138) from [<c0049674>] (sched_autogroup_create_attach+0x30/0x158)
+[   28.429387] [<c0049674>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   28.429423] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   28.429436] ---[ end trace da227214a82491d1 ]---
+[   28.452288] YangGe: I am in init_cfs_rq, min_vruntime = 18446744073708503040, cfs_rq = 0xdaa361e0, process = init
+[   28.452314] ------------[ cut here ]------------
+[   28.452350] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   28.452358] See the call stack!
+[   28.452367] Modules linked in: snd_bcm2835 snd_pcm snd_seq snd_timer snd_seq_device snd snd_page_alloc arc4 rt2800usb rt2800lib crc_ccitt rt2x00usb rt2x00lib mac80211 cfg80211 rfkill leds_gpio led_class
+[   28.452471] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   28.452499] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   28.452527] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c00486a4>] (alloc_fair_sched_group+0x98/0x144)
+[   28.452555] [<c00486a4>] (alloc_fair_sched_group+0x98/0x144) from [<c0046744>] (sched_create_group+0x38/0x138)
+[   28.452583] [<c0046744>] (sched_create_group+0x38/0x138) from [<c0049674>] (sched_autogroup_create_attach+0x30/0x158)
+[   28.452624] [<c0049674>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   28.452657] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   28.452671] ---[ end trace da227214a82491d2 ]---
+[   29.440129] YangGe: I am in init_cfs_rq, min_vruntime = 18446744073708503040, cfs_rq = 0xda9baf00, process = lightdm
+[   29.440152] ------------[ cut here ]------------
+[   29.440192] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   29.440201] See the call stack!
+[   29.440210] Modules linked in: snd_bcm2835 snd_pcm snd_seq snd_timer snd_seq_device snd snd_page_alloc arc4 rt2800usb rt2800lib crc_ccitt rt2x00usb rt2x00lib mac80211 cfg80211 rfkill leds_gpio led_class
+[   29.440316] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   29.440344] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   29.440374] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c00486a4>] (alloc_fair_sched_group+0x98/0x144)
+[   29.440399] [<c00486a4>] (alloc_fair_sched_group+0x98/0x144) from [<c0046744>] (sched_create_group+0x38/0x138)
+[   29.440429] [<c0046744>] (sched_create_group+0x38/0x138) from [<c0049674>] (sched_autogroup_create_attach+0x30/0x158)
+[   29.440472] [<c0049674>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   29.440505] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   29.440518] ---[ end trace da227214a82491d3 ]---
+[   30.127645] YangGe: I am in init_cfs_rq, min_vruntime = 18446744073708503040, cfs_rq = 0xda9bade0, process = ssh-agent
+[   30.127668] ------------[ cut here ]------------
+[   30.127707] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   30.127716] See the call stack!
+[   30.127725] Modules linked in: snd_bcm2835 snd_pcm snd_seq snd_timer snd_seq_device snd snd_page_alloc arc4 rt2800usb rt2800lib crc_ccitt rt2x00usb rt2x00lib mac80211 cfg80211 rfkill leds_gpio led_class
+[   30.127858] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   30.127889] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   30.127920] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c00486a4>] (alloc_fair_sched_group+0x98/0x144)
+[   30.127965] [<c00486a4>] (alloc_fair_sched_group+0x98/0x144) from [<c0046744>] (sched_create_group+0x38/0x138)
+[   30.127998] [<c0046744>] (sched_create_group+0x38/0x138) from [<c0049674>] (sched_autogroup_create_attach+0x30/0x158)
+[   30.128042] [<c0049674>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   30.128079] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   30.128091] ---[ end trace da227214a82491d4 ]---
+[   30.193792] YangGe: I am in init_cfs_rq, min_vruntime = 18446744073708503040, cfs_rq = 0xda9bacc0, process = dbus-daemon
+[   30.193815] ------------[ cut here ]------------
+[   30.193854] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   30.193862] See the call stack!
+[   30.193871] Modules linked in: snd_bcm2835 snd_pcm snd_seq snd_timer snd_seq_device snd snd_page_alloc arc4 rt2800usb rt2800lib crc_ccitt rt2x00usb rt2x00lib mac80211 cfg80211 rfkill leds_gpio led_class
+[   30.193977] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   30.194005] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   30.194036] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c00486a4>] (alloc_fair_sched_group+0x98/0x144)
+[   30.194063] [<c00486a4>] (alloc_fair_sched_group+0x98/0x144) from [<c0046744>] (sched_create_group+0x38/0x138)
+[   30.194092] [<c0046744>] (sched_create_group+0x38/0x138) from [<c0049674>] (sched_autogroup_create_attach+0x30/0x158)
+[   30.194133] [<c0049674>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   30.194170] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   30.194182] ---[ end trace da227214a82491d5 ]---
+[   77.528492] YangGe: I am in init_cfs_rq, min_vruntime = 18446744073708503040, cfs_rq = 0xd8a26ae0, process = sshd
+[   77.528515] ------------[ cut here ]------------
+[   77.528552] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   77.528560] See the call stack!
+[   77.528569] Modules linked in: snd_bcm2835 snd_pcm snd_seq snd_timer snd_seq_device snd snd_page_alloc arc4 rt2800usb rt2800lib crc_ccitt rt2x00usb rt2x00lib mac80211 cfg80211 rfkill leds_gpio led_class
+[   77.528675] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   77.528703] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   77.528735] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c00486a4>] (alloc_fair_sched_group+0x98/0x144)
+[   77.528762] [<c00486a4>] (alloc_fair_sched_group+0x98/0x144) from [<c0046744>] (sched_create_group+0x38/0x138)
+[   77.528790] [<c0046744>] (sched_create_group+0x38/0x138) from [<c0049674>] (sched_autogroup_create_attach+0x30/0x158)
+[   77.528833] [<c0049674>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   77.528867] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   77.528880] ---[ end trace da227214a82491d6 ]---
+[   83.614148] YangGe: I am in init_cfs_rq, min_vruntime = 18446744073708503040, cfs_rq = 0xd8a26de0, process = sshd
+[   83.614196] ------------[ cut here ]------------
+[   83.614288] WARNING: at kernel/sched/fair.c:5129 alloc_fair_sched_group+0x98/0x144()
+[   83.614301] See the call stack!
+[   83.614310] Modules linked in: snd_bcm2835 snd_pcm snd_seq snd_timer snd_seq_device snd snd_page_alloc arc4 rt2800usb rt2800lib crc_ccitt rt2x00usb rt2x00lib mac80211 cfg80211 rfkill leds_gpio led_class
+[   83.614419] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[   83.614449] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[   83.614477] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c00486a4>] (alloc_fair_sched_group+0x98/0x144)
+[   83.614503] [<c00486a4>] (alloc_fair_sched_group+0x98/0x144) from [<c0046744>] (sched_create_group+0x38/0x138)
+[   83.614597] [<c0046744>] (sched_create_group+0x38/0x138) from [<c0049674>] (sched_autogroup_create_attach+0x30/0x158)
+[   83.614678] [<c0049674>] (sched_autogroup_create_attach+0x30/0x158) from [<c0031e74>] (sys_setsid+0xa8/0xc0)
+[   83.615021] [<c0031e74>] (sys_setsid+0xa8/0xc0) from [<c000db60>] (ret_fast_syscall+0x0/0x30)
+[   83.615049] ---[ end trace da227214a82491d7 ]---
+[  106.844692] YangGe: I am in set_tsk_need_resched, process = hellomellon
+[  106.844722] ------------[ cut here ]------------
+[  106.844754] WARNING: at kernel/sched/core.c:649 resched_task+0x74/0x8c()
+[  106.844762] See the call stack!
+[  106.844772] Modules linked in: snd_bcm2835 snd_pcm snd_seq snd_timer snd_seq_device snd snd_page_alloc arc4 rt2800usb rt2800lib crc_ccitt rt2x00usb rt2x00lib mac80211 cfg80211 rfkill leds_gpio led_class
+[  106.844880] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[  106.844909] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[  106.844934] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c004399c>] (resched_task+0x74/0x8c)
+[  106.844968] [<c004399c>] (resched_task+0x74/0x8c) from [<c00481e4>] (check_preempt_wakeup+0x174/0x204)
+[  106.844993] [<c00481e4>] (check_preempt_wakeup+0x174/0x204) from [<c0043acc>] (check_preempt_curr+0x84/0x90)
+[  106.845014] [<c0043acc>] (check_preempt_curr+0x84/0x90) from [<c0044180>] (try_to_wake_up+0x98/0x18c)
+[  106.845042] [<c0044180>] (try_to_wake_up+0x98/0x18c) from [<c0036b50>] (__queue_work+0xb8/0x344)
+[  106.845064] [<c0036b50>] (__queue_work+0xb8/0x344) from [<c0036e2c>] (queue_work_on+0x30/0x38)
+[  106.845086] [<c0036e2c>] (queue_work_on+0x30/0x38) from [<c0036e7c>] (queue_work+0x34/0x64)
+[  106.845111] [<c0036e7c>] (queue_work+0x34/0x64) from [<c0288ddc>] (usb_hcd_giveback_urb+0x60/0xf4)
+[  106.845148] [<c0288ddc>] (usb_hcd_giveback_urb+0x60/0xf4) from [<c02acd94>] (completion_tasklet_func+0x5c/0x88)
+[  106.845179] [<c02acd94>] (completion_tasklet_func+0x5c/0x88) from [<c02b736c>] (tasklet_callback+0x10/0x14)
+[  106.845215] [<c02b736c>] (tasklet_callback+0x10/0x14) from [<c0025d3c>] (tasklet_hi_action+0x60/0xb4)
+[  106.845242] [<c0025d3c>] (tasklet_hi_action+0x60/0xb4) from [<c0025f20>] (__do_softirq+0xa0/0x154)
+[  106.845267] [<c0025f20>] (__do_softirq+0xa0/0x154) from [<c00263e8>] (irq_exit+0x8c/0x94)
+[  106.845300] [<c00263e8>] (irq_exit+0x8c/0x94) from [<c000ea20>] (handle_IRQ+0x34/0x84)
+[  106.845339] [<c000ea20>] (handle_IRQ+0x34/0x84) from [<c03b9c78>] (__irq_usr+0x38/0xc0)
+[  106.845353] ---[ end trace da227214a82491d8 ]---
+[  106.845393] YangGe: I am in __schedule, process = hellomellon, will be out, next = kworker/u:0, my cfs_rq = 0xd8a26de0
+[  106.845403] ------------[ cut here ]------------
+[  106.845423] WARNING: at kernel/sched/core.c:3434 __schedule+0x5b8/0x60c()
+[  106.845431] See the call stack!
+[  106.845438] Modules linked in: snd_bcm2835 snd_pcm snd_seq snd_timer snd_seq_device snd snd_page_alloc arc4 rt2800usb rt2800lib crc_ccitt rt2x00usb rt2x00lib mac80211 cfg80211 rfkill leds_gpio led_class
+[  106.845520] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[  106.845547] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[  106.845577] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c03b868c>] (__schedule+0x5b8/0x60c)
+[  106.845609] [<c03b868c>] (__schedule+0x5b8/0x60c) from [<c0010a18>] (do_work_pending+0x2c/0xb0)
+[  106.845633] [<c0010a18>] (do_work_pending+0x2c/0xb0) from [<c000dba0>] (work_pending+0xc/0x20)
+[  106.845643] ---[ end trace da227214a82491d9 ]---
+[  106.854531] YangGe: I am in set_tsk_need_resched, process = hellomellon
+[  106.854552] ------------[ cut here ]------------
+[  106.854579] WARNING: at kernel/sched/core.c:649 resched_task+0x74/0x8c()
+[  106.854587] See the call stack!
+[  106.854596] Modules linked in: snd_bcm2835 snd_pcm snd_seq snd_timer snd_seq_device snd snd_page_alloc arc4 rt2800usb rt2800lib crc_ccitt rt2x00usb rt2x00lib mac80211 cfg80211 rfkill leds_gpio led_class
+[  106.854686] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[  106.854716] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[  106.854740] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c004399c>] (resched_task+0x74/0x8c)
+[  106.854768] [<c004399c>] (resched_task+0x74/0x8c) from [<c00481e4>] (check_preempt_wakeup+0x174/0x204)
+[  106.854792] [<c00481e4>] (check_preempt_wakeup+0x174/0x204) from [<c0043acc>] (check_preempt_curr+0x84/0x90)
+[  106.854813] [<c0043acc>] (check_preempt_curr+0x84/0x90) from [<c0044180>] (try_to_wake_up+0x98/0x18c)
+[  106.854850] [<c0044180>] (try_to_wake_up+0x98/0x18c) from [<c003b78c>] (autoremove_wake_function+0xc/0x34)
+[  106.854893] [<c003b78c>] (autoremove_wake_function+0xc/0x34) from [<c0043058>] (__wake_up_common+0x54/0x94)
+[  106.854917] [<c0043058>] (__wake_up_common+0x54/0x94) from [<c0043b48>] (__wake_up+0x3c/0x6c)
+[  106.854949] [<c0043b48>] (__wake_up+0x3c/0x6c) from [<c002be6c>] (update_process_times+0x38/0x64)
+[  106.854984] [<c002be6c>] (update_process_times+0x38/0x64) from [<c00573c0>] (tick_sched_timer+0x68/0xdc)
+[  106.855010] [<c00573c0>] (tick_sched_timer+0x68/0xdc) from [<c003ed80>] (__run_hrtimer.isra.19+0x70/0x138)
+[  106.855034] [<c003ed80>] (__run_hrtimer.isra.19+0x70/0x138) from [<c003f5b0>] (hrtimer_interrupt+0xfc/0x2d4)
+[  106.855074] [<c003f5b0>] (hrtimer_interrupt+0xfc/0x2d4) from [<c001a440>] (bcm2708_timer_interrupt+0x24/0x34)
+[  106.855116] [<c001a440>] (bcm2708_timer_interrupt+0x24/0x34) from [<c0079594>] (handle_irq_event_percpu+0x50/0x1b0)
+[  106.855144] [<c0079594>] (handle_irq_event_percpu+0x50/0x1b0) from [<c0079748>] (handle_irq_event+0x54/0x84)
+[  106.855173] [<c0079748>] (handle_irq_event+0x54/0x84) from [<c007bb04>] (handle_level_irq+0x98/0x108)
+[  106.855201] [<c007bb04>] (handle_level_irq+0x98/0x108) from [<c0078e78>] (generic_handle_irq+0x28/0x40)
+[  106.855232] [<c0078e78>] (generic_handle_irq+0x28/0x40) from [<c000ea1c>] (handle_IRQ+0x30/0x84)
+[  106.855267] [<c000ea1c>] (handle_IRQ+0x30/0x84) from [<c03b9c78>] (__irq_usr+0x38/0xc0)
+[  106.855279] ---[ end trace da227214a82491da ]---
+[  106.855304] YangGe: I am in set_tsk_need_resched, process = hellomellon
+[  106.855314] ------------[ cut here ]------------
+[  106.855334] WARNING: at kernel/sched/core.c:649 resched_task+0x74/0x8c()
+[  106.855340] See the call stack!
+[  106.855348] Modules linked in: snd_bcm2835 snd_pcm snd_seq snd_timer snd_seq_device snd snd_page_alloc arc4 rt2800usb rt2800lib crc_ccitt rt2x00usb rt2x00lib mac80211 cfg80211 rfkill leds_gpio led_class
+[  106.855430] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[  106.855460] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[  106.855484] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c004399c>] (resched_task+0x74/0x8c)
+[  106.855511] [<c004399c>] (resched_task+0x74/0x8c) from [<c0048474>] (task_tick_fair+0xc8/0xe8)
+[  106.855535] [<c0048474>] (task_tick_fair+0xc8/0xe8) from [<c0045408>] (scheduler_tick+0xc4/0xf8)
+[  106.855562] [<c0045408>] (scheduler_tick+0xc4/0xf8) from [<c002be88>] (update_process_times+0x54/0x64)
+[  106.855592] [<c002be88>] (update_process_times+0x54/0x64) from [<c00573c0>] (tick_sched_timer+0x68/0xdc)
+[  106.855621] [<c00573c0>] (tick_sched_timer+0x68/0xdc) from [<c003ed80>] (__run_hrtimer.isra.19+0x70/0x138)
+[  106.855646] [<c003ed80>] (__run_hrtimer.isra.19+0x70/0x138) from [<c003f5b0>] (hrtimer_interrupt+0xfc/0x2d4)
+[  106.855677] [<c003f5b0>] (hrtimer_interrupt+0xfc/0x2d4) from [<c001a440>] (bcm2708_timer_interrupt+0x24/0x34)
+[  106.855713] [<c001a440>] (bcm2708_timer_interrupt+0x24/0x34) from [<c0079594>] (handle_irq_event_percpu+0x50/0x1b0)
+[  106.855741] [<c0079594>] (handle_irq_event_percpu+0x50/0x1b0) from [<c0079748>] (handle_irq_event+0x54/0x84)
+[  106.855767] [<c0079748>] (handle_irq_event+0x54/0x84) from [<c007bb04>] (handle_level_irq+0x98/0x108)
+[  106.855793] [<c007bb04>] (handle_level_irq+0x98/0x108) from [<c0078e78>] (generic_handle_irq+0x28/0x40)
+[  106.855821] [<c0078e78>] (generic_handle_irq+0x28/0x40) from [<c000ea1c>] (handle_IRQ+0x30/0x84)
+[  106.855852] [<c000ea1c>] (handle_IRQ+0x30/0x84) from [<c03b9c78>] (__irq_usr+0x38/0xc0)
+[  106.855864] ---[ end trace da227214a82491db ]---
+[  106.855918] YangGe: I am in __schedule, process = hellomellon, will be out, next = rsyslogd, my cfs_rq = 0xd8a26de0
+[  106.855929] ------------[ cut here ]------------
+[  106.855953] WARNING: at kernel/sched/core.c:3434 __schedule+0x5b8/0x60c()
+[  106.855961] See the call stack!
+[  106.855968] Modules linked in: snd_bcm2835 snd_pcm snd_seq snd_timer snd_seq_device snd snd_page_alloc arc4 rt2800usb rt2800lib crc_ccitt rt2x00usb rt2x00lib mac80211 cfg80211 rfkill leds_gpio led_class
+[  106.856049] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[  106.856078] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[  106.856105] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c03b868c>] (__schedule+0x5b8/0x60c)
+[  106.856135] [<c03b868c>] (__schedule+0x5b8/0x60c) from [<c0010a18>] (do_work_pending+0x2c/0xb0)
+[  106.856161] [<c0010a18>] (do_work_pending+0x2c/0xb0) from [<c000dba0>] (work_pending+0xc/0x20)
+[  106.856171] ---[ end trace da227214a82491dc ]---
+[  106.864536] YangGe: I am in set_tsk_need_resched, process = hellomellon
+[  106.864559] ------------[ cut here ]------------
+[  106.864590] WARNING: at kernel/sched/core.c:649 resched_task+0x74/0x8c()
+[  106.864598] See the call stack!
+[  106.864606] Modules linked in: snd_bcm2835 snd_pcm snd_seq snd_timer snd_seq_device snd snd_page_alloc arc4 rt2800usb rt2800lib crc_ccitt rt2x00usb rt2x00lib mac80211 cfg80211 rfkill leds_gpio led_class
+[  106.864704] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[  106.864733] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[  106.864758] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c004399c>] (resched_task+0x74/0x8c)
+[  106.864785] [<c004399c>] (resched_task+0x74/0x8c) from [<c00481e4>] (check_preempt_wakeup+0x174/0x204)
+[  106.864809] [<c00481e4>] (check_preempt_wakeup+0x174/0x204) from [<c0043acc>] (check_preempt_curr+0x84/0x90)
+[  106.864832] [<c0043acc>] (check_preempt_curr+0x84/0x90) from [<c0044180>] (try_to_wake_up+0x98/0x18c)
+[  106.864866] [<c0044180>] (try_to_wake_up+0x98/0x18c) from [<c003b78c>] (autoremove_wake_function+0xc/0x34)
+[  106.864903] [<c003b78c>] (autoremove_wake_function+0xc/0x34) from [<c0043058>] (__wake_up_common+0x54/0x94)
+[  106.864926] [<c0043058>] (__wake_up_common+0x54/0x94) from [<c0043b48>] (__wake_up+0x3c/0x6c)
+[  106.864954] [<c0043b48>] (__wake_up+0x3c/0x6c) from [<c002be6c>] (update_process_times+0x38/0x64)
+[  106.864988] [<c002be6c>] (update_process_times+0x38/0x64) from [<c00573c0>] (tick_sched_timer+0x68/0xdc)
+[  106.865013] [<c00573c0>] (tick_sched_timer+0x68/0xdc) from [<c003ed80>] (__run_hrtimer.isra.19+0x70/0x138)
+[  106.865036] [<c003ed80>] (__run_hrtimer.isra.19+0x70/0x138) from [<c003f5b0>] (hrtimer_interrupt+0xfc/0x2d4)
+[  106.865073] [<c003f5b0>] (hrtimer_interrupt+0xfc/0x2d4) from [<c001a440>] (bcm2708_timer_interrupt+0x24/0x34)
+[  106.865114] [<c001a440>] (bcm2708_timer_interrupt+0x24/0x34) from [<c0079594>] (handle_irq_event_percpu+0x50/0x1b0)
+[  106.865143] [<c0079594>] (handle_irq_event_percpu+0x50/0x1b0) from [<c0079748>] (handle_irq_event+0x54/0x84)
+[  106.865170] [<c0079748>] (handle_irq_event+0x54/0x84) from [<c007bb04>] (handle_level_irq+0x98/0x108)
+[  106.865196] [<c007bb04>] (handle_level_irq+0x98/0x108) from [<c0078e78>] (generic_handle_irq+0x28/0x40)
+[  106.865229] [<c0078e78>] (generic_handle_irq+0x28/0x40) from [<c000ea1c>] (handle_IRQ+0x30/0x84)
+[  106.865265] [<c000ea1c>] (handle_IRQ+0x30/0x84) from [<c03b9c78>] (__irq_usr+0x38/0xc0)
+[  106.865277] ---[ end trace da227214a82491dd ]---
+[  106.865300] YangGe: I am in set_tsk_need_resched, process = hellomellon
+[  106.865310] ------------[ cut here ]------------
+[  106.865328] WARNING: at kernel/sched/core.c:649 resched_task+0x74/0x8c()
+[  106.865335] See the call stack!
+[  106.865343] Modules linked in: snd_bcm2835 snd_pcm snd_seq snd_timer snd_seq_device snd snd_page_alloc arc4 rt2800usb rt2800lib crc_ccitt rt2x00usb rt2x00lib mac80211 cfg80211 rfkill leds_gpio led_class
+[  106.865426] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[  106.865454] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[  106.865478] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c004399c>] (resched_task+0x74/0x8c)
+[  106.865505] [<c004399c>] (resched_task+0x74/0x8c) from [<c0048474>] (task_tick_fair+0xc8/0xe8)
+[  106.865530] [<c0048474>] (task_tick_fair+0xc8/0xe8) from [<c0045408>] (scheduler_tick+0xc4/0xf8)
+[  106.865556] [<c0045408>] (scheduler_tick+0xc4/0xf8) from [<c002be88>] (update_process_times+0x54/0x64)
+[  106.865586] [<c002be88>] (update_process_times+0x54/0x64) from [<c00573c0>] (tick_sched_timer+0x68/0xdc)
+[  106.865615] [<c00573c0>] (tick_sched_timer+0x68/0xdc) from [<c003ed80>] (__run_hrtimer.isra.19+0x70/0x138)
+[  106.865640] [<c003ed80>] (__run_hrtimer.isra.19+0x70/0x138) from [<c003f5b0>] (hrtimer_interrupt+0xfc/0x2d4)
+[  106.865670] [<c003f5b0>] (hrtimer_interrupt+0xfc/0x2d4) from [<c001a440>] (bcm2708_timer_interrupt+0x24/0x34)
+[  106.865705] [<c001a440>] (bcm2708_timer_interrupt+0x24/0x34) from [<c0079594>] (handle_irq_event_percpu+0x50/0x1b0)
+[  106.865733] [<c0079594>] (handle_irq_event_percpu+0x50/0x1b0) from [<c0079748>] (handle_irq_event+0x54/0x84)
+[  106.865760] [<c0079748>] (handle_irq_event+0x54/0x84) from [<c007bb04>] (handle_level_irq+0x98/0x108)
+[  106.865786] [<c007bb04>] (handle_level_irq+0x98/0x108) from [<c0078e78>] (generic_handle_irq+0x28/0x40)
+[  106.865814] [<c0078e78>] (generic_handle_irq+0x28/0x40) from [<c000ea1c>] (handle_IRQ+0x30/0x84)
+[  106.865846] [<c000ea1c>] (handle_IRQ+0x30/0x84) from [<c03b9c78>] (__irq_usr+0x38/0xc0)
+[  106.865857] ---[ end trace da227214a82491de ]---
+[  106.865912] YangGe: I am in __schedule, process = hellomellon, will be out, next = rs:main Q:Reg, my cfs_rq = 0xd8a26de0
+[  106.865924] ------------[ cut here ]------------
+[  106.865948] WARNING: at kernel/sched/core.c:3434 __schedule+0x5b8/0x60c()
+[  106.865955] See the call stack!
+[  106.865962] Modules linked in: snd_bcm2835 snd_pcm snd_seq snd_timer snd_seq_device snd snd_page_alloc arc4 rt2800usb rt2800lib crc_ccitt rt2x00usb rt2x00lib mac80211 cfg80211 rfkill leds_gpio led_class
+[  106.866043] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[  106.866071] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[  106.866099] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c03b868c>] (__schedule+0x5b8/0x60c)
+[  106.866130] [<c03b868c>] (__schedule+0x5b8/0x60c) from [<c0010a18>] (do_work_pending+0x2c/0xb0)
+[  106.866155] [<c0010a18>] (do_work_pending+0x2c/0xb0) from [<c000dba0>] (work_pending+0xc/0x20)
+[  106.866165] ---[ end trace da227214a82491df ]---
+[  106.884516] YangGe: I am in set_tsk_need_resched, process = hellomellon
+[  106.884545] ------------[ cut here ]------------
+[  106.884578] WARNING: at kernel/sched/core.c:649 resched_task+0x74/0x8c()
+[  106.884587] See the call stack!
+[  106.884596] Modules linked in: snd_bcm2835 snd_pcm snd_seq snd_timer snd_seq_device snd snd_page_alloc arc4 rt2800usb rt2800lib crc_ccitt rt2x00usb rt2x00lib mac80211 cfg80211 rfkill leds_gpio led_class
+[  106.884701] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[  106.884730] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[  106.884755] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c004399c>] (resched_task+0x74/0x8c)
+[  106.884785] [<c004399c>] (resched_task+0x74/0x8c) from [<c0048474>] (task_tick_fair+0xc8/0xe8)
+[  106.884809] [<c0048474>] (task_tick_fair+0xc8/0xe8) from [<c0045408>] (scheduler_tick+0xc4/0xf8)
+[  106.884841] [<c0045408>] (scheduler_tick+0xc4/0xf8) from [<c002be88>] (update_process_times+0x54/0x64)
+[  106.884876] [<c002be88>] (update_process_times+0x54/0x64) from [<c00573c0>] (tick_sched_timer+0x68/0xdc)
+[  106.884908] [<c00573c0>] (tick_sched_timer+0x68/0xdc) from [<c003ed80>] (__run_hrtimer.isra.19+0x70/0x138)
+[  106.884934] [<c003ed80>] (__run_hrtimer.isra.19+0x70/0x138) from [<c003f5b0>] (hrtimer_interrupt+0xfc/0x2d4)
+[  106.884974] [<c003f5b0>] (hrtimer_interrupt+0xfc/0x2d4) from [<c001a440>] (bcm2708_timer_interrupt+0x24/0x34)
+[  106.885015] [<c001a440>] (bcm2708_timer_interrupt+0x24/0x34) from [<c0079594>] (handle_irq_event_percpu+0x50/0x1b0)
+[  106.885042] [<c0079594>] (handle_irq_event_percpu+0x50/0x1b0) from [<c0079748>] (handle_irq_event+0x54/0x84)
+[  106.885072] [<c0079748>] (handle_irq_event+0x54/0x84) from [<c007bb04>] (handle_level_irq+0x98/0x108)
+[  106.885098] [<c007bb04>] (handle_level_irq+0x98/0x108) from [<c0078e78>] (generic_handle_irq+0x28/0x40)
+[  106.885132] [<c0078e78>] (generic_handle_irq+0x28/0x40) from [<c000ea1c>] (handle_IRQ+0x30/0x84)
+[  106.885170] [<c000ea1c>] (handle_IRQ+0x30/0x84) from [<c03b9c78>] (__irq_usr+0x38/0xc0)
+[  106.885183] ---[ end trace da227214a82491e0 ]---
+[  106.885239] YangGe: I am in __schedule, process = hellomellon, will be out, next = rsyslogd, my cfs_rq = 0xd8a26de0
+[  106.885253] ------------[ cut here ]------------
+[  106.885276] WARNING: at kernel/sched/core.c:3434 __schedule+0x5b8/0x60c()
+[  106.885283] See the call stack!
+[  106.885290] Modules linked in: snd_bcm2835 snd_pcm snd_seq snd_timer snd_seq_device snd snd_page_alloc arc4 rt2800usb rt2800lib crc_ccitt rt2x00usb rt2x00lib mac80211 cfg80211 rfkill leds_gpio led_class
+[  106.885373] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[  106.885401] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[  106.885428] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c03b868c>] (__schedule+0x5b8/0x60c)
+[  106.885464] [<c03b868c>] (__schedule+0x5b8/0x60c) from [<c0010a18>] (do_work_pending+0x2c/0xb0)
+[  106.885489] [<c0010a18>] (do_work_pending+0x2c/0xb0) from [<c000dba0>] (work_pending+0xc/0x20)
+[  106.885501] ---[ end trace da227214a82491e1 ]---
+[  106.901031] YangGe: I am in __schedule, process = hellomellon, will be out, next = rs:main Q:Reg, my cfs_rq = 0xc0549f10
+[  106.901057] ------------[ cut here ]------------
+[  106.901098] WARNING: at kernel/sched/core.c:3434 __schedule+0x5b8/0x60c()
+[  106.901107] See the call stack!
+[  106.901116] Modules linked in: snd_bcm2835 snd_pcm snd_seq snd_timer snd_seq_device snd snd_page_alloc arc4 rt2800usb rt2800lib crc_ccitt rt2x00usb rt2x00lib mac80211 cfg80211 rfkill leds_gpio led_class
+[  106.901222] [<c0013c60>] (unwind_backtrace+0x0/0xf0) from [<c001e6f0>] (warn_slowpath_common+0x4c/0x64)
+[  106.901251] [<c001e6f0>] (warn_slowpath_common+0x4c/0x64) from [<c001e79c>] (warn_slowpath_fmt+0x30/0x40)
+[  106.901279] [<c001e79c>] (warn_slowpath_fmt+0x30/0x40) from [<c03b868c>] (__schedule+0x5b8/0x60c)
+[  106.901310] [<c03b868c>] (__schedule+0x5b8/0x60c) from [<c002406c>] (do_exit+0x48c/0x788)
+[  106.901337] [<c002406c>] (do_exit+0x48c/0x788) from [<c0024608>] (do_group_exit+0x3c/0xc4)
+[  106.901361] [<c0024608>] (do_group_exit+0x3c/0xc4) from [<c00246a0>] (__wake_up_parent+0x0/0x18)
+[  106.901373] ---[ end trace da227214a82491e2 ]---
